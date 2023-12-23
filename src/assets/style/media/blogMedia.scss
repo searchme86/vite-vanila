@@ -1,0 +1,105 @@
+@media (min-width: 1200px) {
+}
+
+@media all and (min-width: 861px) and (max-width: 1200px) {
+  .box__blog-article {
+    .box__fixed-scrollbar {
+      .box__fixed-title {
+        max-width: 830px;
+        .box__fixed-image {
+          margin-left: 21px;
+        }
+        .text__fixed-title {
+          font-size: 43px;
+          margin-left: 90px;
+        }
+      }
+    }
+    .box__blog-content {
+      max-width: 830px;
+    }
+  }
+}
+
+@media all and (min-width: 760px) and (max-width: 860px) {
+  .box__blog-article {
+    .box__fixed-scrollbar {
+      .box__fixed-title {
+        max-width: 730px;
+        .box__fixed-image {
+          margin-left: 21px;
+        }
+        .text__fixed-title {
+          font-size: 37px;
+          margin-left: 90px;
+        }
+      }
+    }
+    .box__blog-content {
+      max-width: 730px;
+    }
+  }
+}
+
+@media all and (min-width: 360px) and (max-width: 759px) {
+  header {
+    .box__header-bottom {
+      padding-bottom: 23px;
+    }
+  }
+
+  .box__blog-article {
+    max-width: 330px;
+    margin: 0 auto;
+    .text__blog-title {
+      font-size: 22px;
+    }
+    .box__fixed-scrollbar {
+      .box__fixed-title {
+        max-width: 730px;
+        .box__fixed-image {
+          margin-left: 21px;
+        }
+        .text__fixed-title {
+          font-size: 18px;
+          margin-left: 16px;
+        }
+      }
+      &.scroll {
+        &.textUp {
+          top: -64px;
+        }
+      }
+    }
+    .box__blog-content {
+      max-width: 730px;
+      margin: 17px auto 0;
+      .box__blog-text {
+        width: 100%;
+        .text__dummy-title {
+          font-size: 19px;
+        }
+        .text__dummy-text {
+          font-size: 16px;
+        }
+        .text__dummy-italic {
+          font-size: 26px;
+        }
+      }
+      .box__blog-menu {
+        display: none;
+      }
+    }
+    .box__recommend {
+      margin-top: 10px;
+      .list__recomment-slider {
+        .list-item__recomment-slider {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 319px) and (max-width: 359px) {
+}
