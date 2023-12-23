@@ -63,8 +63,6 @@ const init = async () => {
   } catch (error) {
     console.error(error);
   }
-
-  // elements.loading.style.display = "none";
 };
 
 window.addEventListener("DOMContentLoaded", () => {

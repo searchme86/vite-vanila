@@ -76,10 +76,15 @@
               .list-item__mSidebar-menu {
                 .text__menu-title {
                   display: block;
-                  padding: 10px 0;
+                  margin: 10px 0;
+                }
+                .button__mSidebar-menu {
+                  .text__menu-title {
+                    display: block;
+                    padding: 0;
+                  }
                 }
                 .list__mSidebar-submenu {
-                  margin-bottom: 10px;
                   .list-item__mSidebar-submenu {
                     &:not(:first-child) {
                       margin-top: 10px;
@@ -768,10 +773,15 @@
               .list-item__mSidebar-menu {
                 .text__menu-title {
                   display: block;
-                  padding: 10px 0;
+                  margin: 10px 0;
+                }
+                .button__mSidebar-menu {
+                  .text__menu-title {
+                    display: block;
+                    padding: 0;
+                  }
                 }
                 .list__mSidebar-submenu {
-                  margin-bottom: 10px;
                   .list-item__mSidebar-submenu {
                     &:not(:first-child) {
                       margin-top: 10px;
@@ -1071,7 +1081,6 @@
         }
         .box__mobile {
           .box__mSideBar {
-            max-width: 280px;
             .box__mSideBar-top {
               padding-bottom: 0;
               margin-bottom: 0;
@@ -1085,10 +1094,15 @@
               .list-item__mSidebar-menu {
                 .text__menu-title {
                   display: block;
-                  padding: 10px 0;
+                  margin: 10px 0;
+                }
+                .button__mSidebar-menu {
+                  .text__menu-title {
+                    display: block;
+                    padding: 0;
+                  }
                 }
                 .list__mSidebar-submenu {
-                  margin-bottom: 10px;
                   .list-item__mSidebar-submenu {
                     &:not(:first-child) {
                       margin-top: 10px;
