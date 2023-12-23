@@ -4,7 +4,7 @@ import {createHtmlPlugin} from "vite-plugin-html";
 import terser from "@rollup/plugin-terser";
 
 export default defineConfig({
-  base: process.env.NODE_ENV === "production" ? "/portfolio-vanila/" : "./",
+  base: process.env.NODE_ENV === "production" ? "/vite-vanila/" : "./",
   build: {
     rollupOptions: {
       input: {
