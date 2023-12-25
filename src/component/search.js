@@ -3,7 +3,7 @@
  * 상품 검색 스크립트
  */
 
-import {inputformElem, nameInput} from "../utils/cartElemDom.js";
+import {inputFormElem, nameInput} from "../utils/cartElemDom.js";
 import {addItemsToContainer} from "../utils/render.js";
 import {productContainer} from "../utils/cartElemDom.js";
 
@@ -23,7 +23,7 @@ const renderSearchComponent = (store) => {
     }
   };
 
-  inputformElem.addEventListener("keyup", () => {
+  inputFormElem.addEventListener("keyup", () => {
     const value = nameInput.value.toLowerCase();
     const newStore = value ? filterProductsByName(value) : store;
     displayFilteredProducts(newStore);

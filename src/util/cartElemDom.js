@@ -1,4 +1,5 @@
-export const selectElement = (selector) => {
+// TODO 불필요한 export 양산 금지
+const selectElement = (selector) => {
   const element = document.querySelector(selector);
   return element;
 };
@@ -15,7 +16,7 @@ export const productContainer = selectElement(".list__card-products");
 export const swiperList = document.querySelector(".swiper-wrapper");
 export const companiesDOM = selectElement(".list__companies");
 export const featuredProductsContainer = selectElement(".featured-center");
-export const inputformElem = selectElement(".box__search-item");
+export const inputFormElem = selectElement(".box__search-item");
 export const priceInput = selectElement(
   ".box__price-filter .box__input-box input",
 );
