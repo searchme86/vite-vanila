@@ -14,25 +14,28 @@ export const api = {
     }
 }
 
-export const fetchProducts = async () => {
-  try {
-    const response = await fetch(FetchProductsApi);
-    const {products} = await response.json();
+// TODO: 로직별로 handling을 하는게 아니라면 굳이 따로 만들필요가 없음.
+// TODO: 단 혹시 모르니 분리를 하는것이 필요. 비지니스 로직이 필요할수있기 때문.
 
+export const getProducts = async () => {
+  try {
+    const response = await fetch(api.product);
+    // TODO lint setting 필요. 대부분 {}을 띄우는게 일반적임.
+    const { products } = await response.json();
     return products;
   } catch (error) {
+    // TODO js에서 일반적으로 throw를 어떤식으로 provider 관리하는지 적용필요.
     console.error(error.message);
     return null;
   }
 };
 
-export const fetchSingleProducts = async (value) => {
-  const fetchSingle = `https://dummyjson.com/products/${value}`;
+export const getProduct = async (value) => {
+  const path = `${api.product.one}/${value}`;
 
   try {
-    const response = await fetch(fetchSingle);
+    const response = await fetch(path);
     const res = await response.json();
-
     return res;
   } catch (error) {
     console.error(error.message);
