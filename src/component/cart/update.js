@@ -2,7 +2,6 @@
  * 상품 페이지(products.html)에서 카트 이미지 버튼 클릭시, 초기 start 스크립트
  */
 
-import {cartItems} from "../../util/cartElemDom.js";
 import {
   getItemFromLocalStorage,
   saveItemToLocalStorage,
@@ -68,6 +67,8 @@ const decreaseAmount = (domDataSetId) => {
 
 // 페이지 하단, 모달안에 개별 상품의 화살표(증감)을 클릭 시, 활성화 함수
 const processCart = () => {
+  const cartItems = document.querySelector(".box__cartItem-container");
+
   if (cartItems) {
     cartItems.addEventListener("click", (e) => {
       const target = e.target;

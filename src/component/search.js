@@ -3,9 +3,11 @@
  * 상품 검색 스크립트
  */
 
-import {inputFormElem, nameInput} from "../util/cartElemDom.js";
+import {nameInput} from "../util/cartElemDom.js";
 import {addItemsToContainer} from "../util/render.js";
-import {productContainer} from "../util/cartElemDom.js";
+
+const inputFormElem = document.querySelector(".box__search-item");
+const nameInput = document.querySelector(".search-input");
 
 const renderSearchComponent = (store) => {
   const filterProductsByName = (value) =>
@@ -16,6 +18,8 @@ const renderSearchComponent = (store) => {
   };
 
   const displayFilteredProducts = (newStore) => {
+    const productContainer = document.querySelector(".list__card-products");
+
     if (newStore.length < 1) {
       displayFilterError(productContainer);
     } else {

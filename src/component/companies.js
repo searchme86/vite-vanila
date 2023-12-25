@@ -5,7 +5,8 @@
  */
 
 import {addItemsToContainer} from "../util/render.js";
-import {companiesDOM, productContainer} from "../util/cartElemDom.js";
+
+const companiesDOM = document.querySelector(".list__companies");
 
 const filterStoreByCompany = (category, store) => {
   return category === "all"
@@ -29,8 +30,9 @@ const renderCompanyButtons = (categories) => {
 };
 
 const handleCompanyButtonClick = (event, store) => {
-  const element = event.target;
+  const productContainer = document.querySelector(".list__card-products");
 
+  const element = event.target;
   const items = document.querySelectorAll(".list-item__company");
 
   items.forEach((item) => {

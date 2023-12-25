@@ -3,7 +3,6 @@
  */
 
 import {getItemFromLocalStorage} from "../../store/store";
-import {cartItemCount, cartTotal, swiperList} from "../../util/cartElemDom";
 import {rendererCreateCartItem} from "../../util/render";
 import {renderSwiper} from "../../lib/swiper/swiper";
 
@@ -20,6 +19,7 @@ export const displayCartItemCount = () => {
     (countNum, cartItem) => countNum + cartItem.amount,
     0,
   );
+  cartItemCount = document.querySelector(".text__count")
   cartItemCount.textContent = totalCount;
 };
 
@@ -30,6 +30,8 @@ export const displayCartTotal = () => {
     (total, cartItem) => total + cartItem.price * cartItem.amount,
     0,
   );
+
+  const cartTotal = document.querySelector(".text__total-price");
   if (cartTotal) {
     cartTotal.textContent = `Total : $${totalPrice} `;
   }
@@ -37,6 +39,8 @@ export const displayCartTotal = () => {
 
 // 페이지 하단, 팝업되는 div, 슬라이더에 카트 아이템을 넣어주는 함수
 export const displaycartItemsElem = () => {
+const swiperList = document.querySelector(".swiper-wrapper");
+
   let cartState = getItemFromLocalStorage("cart");
   cartState.forEach((item) => {
     const cartItemElement = rendererCreateCartItem(item);
