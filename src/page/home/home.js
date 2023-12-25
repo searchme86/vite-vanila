@@ -8,6 +8,6 @@ import '../asset/style/page/home.scss';
 
 import '../../component/bannerSlider';
 import '../../component/MainSlider';
-import './component/homeAccordion';
-import './component/homeSearch';
-import './component/homeSideBar';
+import './component/accordion';
+import './component/search';
+import './component/sideBar';

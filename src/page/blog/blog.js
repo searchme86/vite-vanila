@@ -10,5 +10,5 @@ import '../../component/bannerSlider';
 import '../../component/scrollIndicator';
 import '../../component/scrollMenu';
 import '../../component/scrollTopBlock';
-import '../home/component/homeAccordion';
-import '../home/component/homeSideBar';
+import '../home/component/accordion';
+import '../home/component/sideBar';
