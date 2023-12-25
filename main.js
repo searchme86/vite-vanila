@@ -1,1 +1,1 @@
-import "./src/views/home";
+import "./src/view/home";

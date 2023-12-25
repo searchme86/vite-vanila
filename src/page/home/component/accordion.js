@@ -1,0 +1,39 @@
+(() => {
+  const getButtonsAndMenus = () => {
+    const buttons = document.querySelectorAll("[data-button-accordion]");
+    const menus = document.querySelectorAll("[data-menu-accordion]");
+    return {buttons, menus};
+  };
+
+  const resetButtonsAndMenus = (buttons, menus) => {
+    buttons.forEach((button) => button.classList.remove("active"));
+    menus.forEach((menu) => menu.classList.remove("active"));
+  };
+
+  const buttonClickHandler = function () {
+    const isClicked = this.nextElementSibling.classList.contains("active");
+    const {buttons, menus} = getButtonsAndMenus();
+
+    resetButtonsAndMenus(buttons, menus);
+
+    if (!isClicked) {
+      this.nextElementSibling.classList.add("active");
+      this.classList.add("active");
+    }
+  };
+
+  const addEventListenersToButtons = () => {
+    const {buttons} = getButtonsAndMenus();
+    buttons.forEach((button) =>
+      button.addEventListener("click", buttonClickHandler),
+    );
+  };
+
+  const initializeAccordion = () => {
+    const {buttons, menus} = getButtonsAndMenus();
+    resetButtonsAndMenus(buttons, menus);
+    addEventListenersToButtons();
+  };
+
+  initializeAccordion();
+})();
