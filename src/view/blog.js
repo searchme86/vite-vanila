@@ -1,13 +1,14 @@
-import "../assets/style/components/header.scss";
-import "../assets/style/components/footer.scss";
-import "../assets/style/pages/blog.scss";
-import "../assets/style/media/headerMedia.scss";
-import "../assets/style/media/footerMedia.scss";
-import "../assets/style/media/blogMedia.scss";
+// TODO 무조건 file은 알파벳 순서대로 되어야함. 이렇게 안하면 나중에 rebase, merge 에서 다 깨짐. 불필요한 작업이 됨.
+import '../asset/style/component/footer.scss';
+import '../asset/style/component/header.scss';
+import '../asset/style/media/blogMedia.scss';
+import '../asset/style/media/footerMedia.scss';
+import '../asset/style/media/headerMedia.scss';
+import '../asset/style/pages/blog.scss';
 
-import "../components/homeAccordion";
-import "../components/homeSideBar";
-import "../components/blog/scrollTopBlock";
-import "../components/blog/scrollIndicator";
-import "../components/blog/scrollMenu";
-import "../components/bannerSlider";
+import '../component/bannerSlider';
+import '../component/blog/scrollIndicator';
+import '../component/blog/scrollMenu';
+import '../component/blog/scrollTopBlock';
+import '../component/homeAccordion';
+import '../component/homeSideBar';

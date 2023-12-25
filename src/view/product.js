@@ -1,23 +1,23 @@
-import "../assets/style/components/header.scss";
-import "../assets/style/components/footer.scss";
-import "../assets/style/pages/product.scss";
-import "../assets/style/media/headerMedia.scss";
+import "../asset/style/component/footer.scss";
+import "../asset/style/component/header.scss";
+import "../asset/style/media/headerMedia.scss";
+import "../asset/style/pages/product.scss";
 
-import "../components/cart/toggleCart";
-import "../components/cart/updateCart";
-import "../components/bannerSlider";
-import "../components/youTube";
+import "../component/bannerSlider";
+import "../component/cart/toggleCart";
+import "../component/cart/updateCart";
+import "../component/youTube";
 
-import {addToCart} from "../components/cart/updateCart";
-import {slider} from "../components/slider/sliderComponent";
-import {fetchSingleProducts} from "../api/fetchProducts";
+import { addToCart } from "../component/cart/updateCart";
+import { slider } from "../component/slider/sliderComponent";
+import { fetchSingleProducts } from "../api/fetchProducts";
 import {
   createDetailItem,
   createInfoDescription,
   createInfoTDescription,
   createInfoSingleDescription,
   createTable,
-} from "../utils/itemTemplate";
+} from "../util/itemTemplate";
 
 const init = async () => {
   const match = window.location.search.match(/\d+/);

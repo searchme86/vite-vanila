@@ -1,18 +1,18 @@
-import "../assets/style/components/header.scss";
-import "../assets/style/components/footer.scss";
-import "../assets/style/pages/products.scss";
-import "../assets/style/media/headerMedia.scss";
+import "../asset/style/component/footer.scss";
+import "../asset/style/component/header.scss";
+import "../asset/style/media/headerMedia.scss";
+import "../asset/style/pages/products.scss";
 
-import "../components/cart/toggleCart";
-import "../components/cart/updateCart";
-import "../components/bannerSlider";
+import "../component/bannerSlider";
+import "../component/cart/toggleCart";
+import "../component/cart/updateCart";
 
-import {productContainer} from "../utils/cartElemDom";
-import {fetchProducts} from "../api/fetchProducts";
-import {storeState, setStoreState} from "../store/store";
-import {addItemsToContainer} from "../utils/render";
-import renderSearchComponent from "../components/search";
-import {renderCompanyComponent} from "../components/companies";
+import { productContainer } from "../utils/cartElemDom";
+import { fetchProducts } from "../api/fetchProducts";
+import { storeState, setStoreState } from "../store/store";
+import { addItemsToContainer } from "../utils/render";
+import renderSearchComponent from "../component/search";
+import { renderCompanyComponent } from "../component/companies";
 
 const initializeApp = async () => {
   if (storeState.length < 1) {
