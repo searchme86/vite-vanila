@@ -4,4 +4,4 @@ import '../asset/style/component/header.scss';
 import '../asset/style/media/headerMedia.scss';
 import '../asset/style/page/cart.scss';
 
-import '../component/bannerSlider';
+import '../../component/bannerSlider';
