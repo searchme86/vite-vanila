@@ -2,7 +2,13 @@
  * 상품 페이지(products.html)
  * 하단 모달에 생성되는 개별 아이템을 렌더링해주는 함수
  * */
-export const createCartItem = ({id, title, price, thumbnail, amount}) => {
+export const createCartItem = ({
+  amount,
+  id,
+  price,
+  thumbnail,
+  title,
+}) => {
   const singleCartItem = document.createElement("li");
   singleCartItem.classList.add("swiper-slide");
   singleCartItem.setAttribute("data-id", id);
@@ -45,7 +51,13 @@ export const createCartItem = ({id, title, price, thumbnail, amount}) => {
  * cart 페이지(products.html)
  * 사용보류
  * */
-export const createCartTRItem = ({id, title, price, thumbnail, amount}) => {
+export const createCartTRItem = ({
+  amount,
+  id,
+  price,
+  thumbnail,
+  title,
+}) => {
   const singleCartItem = document.createElement("tr");
   singleCartItem.setAttribute("data-id", id);
 
@@ -207,15 +219,15 @@ export const createCartTRItem = ({id, title, price, thumbnail, amount}) => {
  * */
 
 export const createProductItem = ({
-  id,
-  title,
-  thumbnail,
-  price,
+  brand,
   description,
   discountPercentage,
+  id,
+  price,
   rating,
   stock,
-  brand,
+  thumbnail,
+  title,
 }) => {
   return /*html*/ `
     <li class="list-item__card-products">
@@ -271,15 +283,15 @@ export const createProductItem = ({
  * */
 
 export const createDetailItem = ({
-  id,
+  amount,
   brand,
   description,
-  title,
-  price,
   discountPercentage,
+  id,
+  price,
   rating,
   stock,
-  amount,
+  title,
 }) => {
   return /*html*/ `
     <strong class="text__item-origin">${brand}</strong>
@@ -310,7 +322,7 @@ export const createDetailItem = ({
       </button>
     </div>
     <button type="button" class="button__add-item" data-id="${id}">
-     <i class="fas fa-cart-plus"></i>
+      <i class="fas fa-cart-plus"></i>
       <span class="text__add-cart" data-id="${id}">장바구니</span>
     </button>
   `;
@@ -323,7 +335,11 @@ export const createDetailItem = ({
  * 상품의 이미지가 3개 이상인 경우에 사용
  * */
 
-export const createInfoDescription = ({description, title, images}) => {
+export const createInfoDescription = ({
+  description,
+  images,
+  title,
+}) => {
   return /*html*/ `
     <section class="box__main-detail">
       <h3 class="text__section-title">${title}</h3>
@@ -422,7 +438,11 @@ export const createInfoDescription = ({description, title, images}) => {
  * 상품의 이미지가 3개에 사용
  * */
 
-export const createInfoTDescription = ({description, title, images}) => {
+export const createInfoTDescription = ({
+  description,
+  images,
+  title,
+}) => {
   return /*html*/ `
     <section class="box__main-detail">
       <h3 class="text__section-title">${title}</h3>
@@ -510,7 +530,11 @@ export const createInfoTDescription = ({description, title, images}) => {
  * 상품 상세 페이지에서 하단 탭 안에 개별 상품의 상세 정보를 렌더링 해주는 함수
  * 상품의 이미지가 1개에 사용
  * */
-export const createInfoSingleDescription = ({description, title, images}) => {
+export const createInfoSingleDescription = ({
+  description,
+  images,
+  title,
+}) => {
   return /*html*/ `
     <section class="box__main-detail">
       <h3 class="text__section-title">${title}</h3>
@@ -568,12 +592,12 @@ export const createInfoSingleDescription = ({description, title, images}) => {
 export const createTable = ({
   brand,
   category,
-  title,
   description,
-  price,
   discountPercentage,
-  stock,
+  price,
   rating,
+  stock,
+  title,
 }) => {
   return /*html*/ `
     <strong class="offscreen">제품 상세 스펙을 정리하는 테이블</strong>
