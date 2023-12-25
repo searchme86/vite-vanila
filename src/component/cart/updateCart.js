@@ -9,7 +9,7 @@ import {
 } from "../../store/store.js";
 import {searchObjInfoByKey} from "../../store/store.js";
 
-import {createCartItem} from "../../utils/itemTemplate.js";
+import {rendererCreateCartItem} from "../../utils/itemTemplate.js";
 import {openCart} from "./toggleCart.js";
 import {
   displayCartItemCount,
@@ -112,7 +112,7 @@ export const addToCart = (domDataSetId) => {
     itemInfoObjByKey = {...itemInfoObjByKey, amount: 1};
     StateChanged = [...cartState, itemInfoObjByKey];
     saveItemToLocalStorage("cart", StateChanged);
-    const cartItemElement = createCartItem(itemInfoObjByKey);
+    const cartItemElement = rendererCreateCartItem(itemInfoObjByKey);
 
     swiperWrapper.appendChild(cartItemElement);
 

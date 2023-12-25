@@ -4,7 +4,7 @@
 
 import {getItemFromLocalStorage} from "../../store/store";
 import {cartItemCount, cartTotal, swiperList} from "../../utils/cartElemDom";
-import {createCartItem} from "../../utils/itemTemplate";
+import {rendererCreateCartItem} from "../../utils/itemTemplate";
 import {renderSwiper} from "../../lib/swiper/swiper";
 
 export let slider = renderSwiper();
@@ -39,7 +39,7 @@ export const displayCartTotal = () => {
 export const displaycartItemsElem = () => {
   let cartState = getItemFromLocalStorage("cart");
   cartState.forEach((item) => {
-    const cartItemElement = createCartItem(item);
+    const cartItemElement = rendererCreateCartItem(item);
     if (swiperList) {
       slider.appendSlide(cartItemElement);
       slider.updateSlides();

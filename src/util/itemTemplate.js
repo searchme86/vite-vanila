@@ -1,8 +1,8 @@
-/**
- * 상품 페이지(products.html)
- * 하단 모달에 생성되는 개별 아이템을 렌더링해주는 함수
- * */
-export const createCartItem = ({
+// TODO 주석은 정말로 공유할때만 쓰는것이고, 불필요한 설명은 필요없음.
+// TODO 함수명을 더 잘쓰는게 중요함.
+// TODO renderer는 util이 아님.
+
+export const rendererCreateCartItem = ({
   amount,
   id,
   price,
@@ -47,178 +47,9 @@ export const createCartItem = ({
   return singleCartItem;
 };
 
-/**
- * cart 페이지(products.html)
- * 사용보류
- * */
-export const createCartTRItem = ({
-  amount,
-  id,
-  price,
-  thumbnail,
-  title,
-}) => {
-  const singleCartItem = document.createElement("tr");
-  singleCartItem.setAttribute("data-id", id);
+// TODO 사용하지 않는 코드는 삭제한다. 어차피 쓰레기가 될거고, 커밋에 남기 때문에 정말로 필요하면 원복하면 됨.
 
-  singleCartItem.innerHTML = /*html*/ `
-    <td>
-      <div class="box__user-item">
-        <div class="box__image">
-          <img
-            src="${thumbnail}"
-            alt="${title}"
-          />
-        </div>
-        <div class="form__input-box">
-          <input type="checkbox" id="${title}" />
-          <label for="${title}">
-            <span class="offscreen">상품이미지</span>
-          </label>
-        </div>
-      </div>
-    </td>
-    <td>
-      <div class="box__cart-title">
-        <strong class="text__item-title">${title}</strong>
-        <p class="text__item-description">${description}</p>
-        <div class="box__item-button">
-          <ul class="list__option-button">
-            <li>
-              <strong class="text__option-title"
-                >옵션1/옵션2</strong
-              >
-              <button type="button" class="button__cart-option">
-                옵션변경
-              </button>
-            </li>
-            <li>
-              <strong class="text__option-title">사은품</strong>
-              <button type="button" class="button__cart-option">
-                사은품 변경
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </td>
-    <td>
-      <div class="box__cart-price">
-        <strong class="text__item-price">
-          <span class="text__item-amount">${price}</span>
-          원</strong
-        >
-        <div class="box__amount-control">
-          <button type="button" class="button__amount-reduce button__increase-cartItem" data-id="${id}">
-            <i class="fas fa-plus"></i>
-            <span class="offscreen">상품 1개씩 증가</span>
-          </button>
-          <span class="text__cart-amount">
-            <span class="offscreen">현재 수량</span>
-            ${amount}
-            <span className="offscreen">개</span>
-          </span>
-          <button type="button" class="button__amount-add button__decrease-cartItem" data-id="${id}">
-            <i class="fas fa-minus"></i>
-            <span class="offscreen">상품 1개씩 감소</span>
-          </button>
-        </div>
-      </div>
-    </td>
-    <td>
-      <div class="box__item-discount">
-        <ul class="list__discount">
-          <li>
-            <span class="text__discount-amount"
-              ><span class="text__discount-value"
-                >999,999,999</span
-              >원</span
-            >
-            <span class="text__discount-condition"
-              >(정기배송할인 5%)</span
-            >
-          </li>
-          <li>
-            <span class="text__discount-amount"
-              ><span class="text__discount-value"
-                >999,999,999</span
-              >원</span
-            >
-            <span class="text__discount-condition"
-              >(즉시배송할인 5%)</span
-            >
-          </li>
-        </ul>
-        <div class="box__discount-coupon">
-          <ul class="list__discount-option">
-            <li>
-              <button type="button" class="button__item-discount">
-                10% 할인쿠폰
-              </button>
-            </li>
-            <li>
-              <button type="button" class="button__item-discount">
-                10% 더블할인 쿠폰
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </td>
-    <td>
-      <div class="box__item-charge">
-        <span class="text__item-charge"
-          ><strong class="text__charge-amount">${price}</strong
-          >원</span
-        >
-      </div>
-    </td>
-    <td>
-      <div class="box__item-delivery">
-        <strong class="text__delivery-charge"
-          >2,500<span class="text__amount-unit">원</span></strong
-        >
-        <p class="text__delivery-condition">
-          50,000원 이상<br />
-          무료배송
-        </p>
-      </div>
-    </td>
-    <td>
-      <div class="box__delivery-button">
-        <button
-          type="button"
-          class="button__item-order button__item-wish"
-        >
-          위시
-        </button>
-        <button
-          type="button"
-          class="button__item-order button__item-togo"
-        >
-          바로주문
-        </button>
-        <button
-          type="button"
-          class="button__item-order button__item-delete button__remove-item"
-          data-id="${id}"
-        >
-          삭제
-        </button>
-      </div>
-    </td>
-`;
-
-  return singleCartItem;
-};
-
-/**
- * 상품 페이지(products.html)
- * 의존 파일 : render.js
- * 상품 페이지에 단일 상품을 렌더링해주는 함수
- * */
-
-export const createProductItem = ({
+export const rendererProductItem = ({
   brand,
   description,
   discountPercentage,
@@ -276,13 +107,7 @@ export const createProductItem = ({
   `;
 };
 
-/**
- * 상품 상세 페이지(product.html)
- * 의존 파일 : product.js
- * 상품 상세 페이지에서 개별 상품의 상세 정보를 렌더링 해주는 함수
- * */
-
-export const createDetailItem = ({
+export const rendererDetailItem = ({
   amount,
   brand,
   description,
@@ -328,14 +153,7 @@ export const createDetailItem = ({
   `;
 };
 
-/**
- * 상품 상세 페이지(product.html)
- * 의존 파일 : product.js
- * 상품 상세 페이지에서 하단 탭 안에 개별 상품의 상세 정보를 렌더링 해주는 함수
- * 상품의 이미지가 3개 이상인 경우에 사용
- * */
-
-export const createInfoDescription = ({
+export const rendererInfoDescription = ({
   description,
   images,
   title,
@@ -431,14 +249,8 @@ export const createInfoDescription = ({
   `;
 };
 
-/**
- * 상품 상세 페이지(product.html)
- * 의존 파일 : product.js
- * 상품 상세 페이지에서 하단 탭 안에 개별 상품의 상세 정보를 렌더링 해주는 함수
- * 상품의 이미지가 3개에 사용
- * */
-
-export const createInfoTDescription = ({
+// TODO 약어가 이미 문제가 되고있음. createInfoDescription, createInfoTDescription 는 1글자 차이인데 의미가 완전다름.
+export const rendererInfoTDescription = ({
   description,
   images,
   title,
@@ -524,13 +336,7 @@ export const createInfoTDescription = ({
   `;
 };
 
-/**
- * 상품 상세 페이지(product.html)
- * 의존 파일 : product.js
- * 상품 상세 페이지에서 하단 탭 안에 개별 상품의 상세 정보를 렌더링 해주는 함수
- * 상품의 이미지가 1개에 사용
- * */
-export const createInfoSingleDescription = ({
+export const rendererInfoSingleDescription = ({
   description,
   images,
   title,
@@ -584,12 +390,8 @@ export const createInfoSingleDescription = ({
   `;
 };
 
-/**
- * 상품 상세 페이지(product.html)
- * 의존 파일 : product.js
- * 상품 상세 페이지에서 하단 탭 안에서 개별 아이템 정보를 테이블로 렌더링 함수
- * */
-export const createTable = ({
+// TODO 이름이 모호함. table은 공용이름임.
+export const rendererTable = ({
   brand,
   category,
   description,

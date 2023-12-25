@@ -7,11 +7,11 @@
  * 유저가 카트 이미지 버튼 클릭 시, localStorage에 해당 아이템이 추가되는 init 스크립트
  */
 
-import {createProductItem} from "./itemTemplate";
+import {rendererProductItem} from "./itemTemplate";
 import {addToCart} from "../components/cart/updateCart";
 
 export const addItemsToContainer = (items, container, filters) => {
-  container.innerHTML = items.map(createProductItem).join("");
+  container.innerHTML = items.map(rendererProductItem).join("");
 
   if (filters) return;
 

@@ -12,11 +12,11 @@ import { addToCart } from "../component/cart/updateCart";
 import { slider } from "../component/slider/sliderComponent";
 import { fetchSingleProducts } from "../api/fetchProducts";
 import {
-  createDetailItem,
-  createInfoDescription,
-  createInfoTDescription,
-  createInfoSingleDescription,
-  createTable,
+  rendererDetailItem,
+  rendererInfoDescription,
+  rendererInfoTDescription,
+  rendererInfoSingleDescription,
+  rendererTable,
 } from "../util/itemTemplate";
 
 const init = async () => {
@@ -33,23 +33,23 @@ const init = async () => {
 
     const item = await fetchSingleProducts(result);
 
-    const itemDetailDOM = createDetailItem(item);
+    const itemDetailDOM = rendererDetailItem(item);
     document.querySelector(".box__item-arrange").innerHTML = itemDetailDOM;
 
     const imageList = item.images;
 
     if (imageList.length > 3) {
-      some.innerHTML = createInfoDescription(item);
+      some.innerHTML = rendererInfoDescription(item);
     }
     if (imageList.length === 3) {
-      some.innerHTML = createInfoTDescription(item);
+      some.innerHTML = rendererInfoTDescription(item);
     }
 
     if (imageList.length === 1) {
-      some.innerHTML = createInfoSingleDescription(item);
+      some.innerHTML = rendererInfoSingleDescription(item);
     }
 
-    itemTable.innerHTML = createTable(item);
+    itemTable.innerHTML = rendererTable(item);
 
     const cartButton = document.querySelector(".box__item-detail");
 
