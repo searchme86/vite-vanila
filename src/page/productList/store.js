@@ -20,7 +20,7 @@ const saveItemToLocalStorage = (name, item) => {
 
 let storeState = getItemFromLocalStorage("store");
 
-const mapBindProdctField = (product) => {
+const mapBindProductField = (product) => {
   const {
     id,
     title,
@@ -49,7 +49,7 @@ const mapBindProdctField = (product) => {
 };
 
 const setStoreState = (products) => {
-  saveItemToLocalStorage("store", products.map(mapBindProdctField));
+  saveItemToLocalStorage("store", products.map(mapBindProductField));
 };
 
 const searchObjInfoByKey = (id) => {
