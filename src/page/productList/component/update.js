@@ -5,8 +5,8 @@
 import {
   getItemFromLocalStorage,
   saveItemToLocalStorage,
-} from "../../store/store.js";
-import {searchObjInfoByKey} from "../../store/store.js";
+} from "../../../store/store.js";
+import {searchObjInfoByKey} from "../../../store/store.js";
 
 import {rendererCreateCartItem} from "../../util/itemTemplate.js";
 import {openCart} from "./toggle.js";

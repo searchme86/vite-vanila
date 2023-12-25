@@ -15,7 +15,7 @@ import {
 
 import {getProduct} from "../../api/product";
 import {createImageElement, createMainImageElement} from "./data";
-import {zoomInElem} from "../zoomIn";
+import {zoomInElem} from "./zoomIn";
 
 export const slider = async () => {
   const match = window.location.search.match(/\d+/);
