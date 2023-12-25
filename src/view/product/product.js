@@ -3,13 +3,13 @@ import "../asset/style/component/header.scss";
 import "../asset/style/media/headerMedia.scss";
 import "../asset/style/pages/product.scss";
 
-import "../component/bannerSlider";
-import "../component/cart/toggleCart";
-import "../component/cart/updateCart";
-import "../component/youTube";
+import "../../component/bannerSlider";
+import "../../component/cart/toggleCart";
+import "../../component/cart/updateCart";
+import "../../component/youTube";
 
-import { addToCart } from "../component/cart/updateCart";
-import { slider } from "../component/slider/sliderComponent";
+import { addToCart } from "../../component/cart/updateCart";
+import { slider } from "../../component/slider/sliderComponent";
 import { fetchSingleProducts } from "../api/fetchProducts";
 import {
   rendererDetailItem,
@@ -17,7 +17,7 @@ import {
   rendererInfoTDescription,
   rendererInfoSingleDescription,
   rendererTable,
-} from "../util/itemTemplate";
+} from "./renderer";
 
 const init = async () => {
   const match = window.location.search.match(/\d+/);
