@@ -9,10 +9,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "./index.html"),
-        product: resolve(__dirname, "./src/pages/product.html"),
-        products: resolve(__dirname, "./src/pages/products.html"),
-        blog: resolve(__dirname, "./src/pages/blog.html"),
-        cart: resolve(__dirname, "./src/pages/cart.html"),
+        product: resolve(__dirname, "./src/page/product.html"),
+        products: resolve(__dirname, "./src/page/products.html"),
+        blog: resolve(__dirname, "./src/page/blog.html"),
+        cart: resolve(__dirname, "./src/page/cart.html"),
       },
       output: {
         assetFileNames: (assetInfo) => {
@@ -21,14 +21,14 @@ export default defineConfig({
             if (extType) {
               if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
                 extType = "images";
-                return `assets/${extType}/[name]-[hash][extname]`;
+                return `asset/${extType}/[name]-[hash][extname]`;
               }
             }
           }
-          return "assets/css/[name]-[hash][extname]";
+          return "asset/css/[name]-[hash][extname]";
         },
-        chunkFileNames: "assets/js/[name]-[hash].js",
-        entryFileNames: "assets/js/[name]-[hash].js",
+        chunkFileNames: "asset/js/[name]-[hash].js",
+        entryFileNames: "asset/js/[name]-[hash].js",
       },
     },
   },

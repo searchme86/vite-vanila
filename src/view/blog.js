@@ -4,7 +4,7 @@ import '../asset/style/component/header.scss';
 import '../asset/style/media/blogMedia.scss';
 import '../asset/style/media/footerMedia.scss';
 import '../asset/style/media/headerMedia.scss';
-import '../asset/style/pages/blog.scss';
+import '../asset/style/page/blog.scss';
 
 import '../component/bannerSlider';
 import '../component/blog/scrollIndicator';

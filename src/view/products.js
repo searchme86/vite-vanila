@@ -1,7 +1,7 @@
 import "../asset/style/component/footer.scss";
 import "../asset/style/component/header.scss";
 import "../asset/style/media/headerMedia.scss";
-import "../asset/style/pages/products.scss";
+import "../asset/style/page/products.scss";
 
 import "../component/bannerSlider";
 import "../component/cart/toggle";

@@ -109,7 +109,7 @@ export const rendererInfoDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/dummyImage01.png" alt="lego batman"/>
+              <img src="../../asset/image/cart/dummyImage01.png" alt="lego batman"/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -120,7 +120,7 @@ export const rendererInfoDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/dummyImage02.png" alt="lego batman"/>
+              <img src="../../asset/image/cart/dummyImage02.png" alt="lego batman"/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -131,7 +131,7 @@ export const rendererInfoDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/dummyImage03.png" alt="lego batman"/>
+              <img src="../../asset/image/cart/dummyImage03.png" alt="lego batman"/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -196,7 +196,7 @@ export const rendererInfoDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/alert.png" alt=""/>
+              <img src="../../asset/image/cart/alert.png" alt=""/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -207,7 +207,7 @@ export const rendererInfoDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/management.png" alt=""/>
+              <img src="../../asset/image/cart/management.png" alt=""/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -218,7 +218,7 @@ export const rendererInfoDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/management.png" alt=""/>
+              <img src="../../asset/image/cart/management.png" alt=""/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -252,7 +252,7 @@ export const rendererInfoSingleDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/alert.png" alt=""/>
+              <img src="../../asset/image/cart/alert.png" alt=""/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -263,7 +263,7 @@ export const rendererInfoSingleDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/management.png" alt=""/>
+              <img src="../../asset/image/cart/management.png" alt=""/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -274,7 +274,7 @@ export const rendererInfoSingleDescription = ({
         <div class="box__item-notice">
           <div class="box__notice-image">
             <div class="box__image">
-              <img src="../../assets/images/cart/management.png" alt=""/>
+              <img src="../../asset/image/cart/management.png" alt=""/>
             </div>
           </div>
           <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>

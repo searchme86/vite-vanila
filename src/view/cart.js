@@ -2,6 +2,6 @@
 import '../asset/style/component/footer.scss';
 import '../asset/style/component/header.scss';
 import '../asset/style/media/headerMedia.scss';
-import '../asset/style/pages/cart.scss';
+import '../asset/style/page/cart.scss';
 
 import '../component/bannerSlider';
