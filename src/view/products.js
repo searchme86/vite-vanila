@@ -4,8 +4,8 @@ import "../asset/style/media/headerMedia.scss";
 import "../asset/style/pages/products.scss";
 
 import "../component/bannerSlider";
-import "../component/cart/toggleCart";
-import "../component/cart/updateCart";
+import "../component/cart/toggle";
+import "../component/cart/update";
 
 import { productContainer } from "../util/cartElemDom";
 import { fetchProducts } from "../api/fetchProducts";

@@ -10,13 +10,13 @@ import {
 import {searchObjInfoByKey} from "../../store/store.js";
 
 import {rendererCreateCartItem} from "../../util/itemTemplate.js";
-import {openCart} from "./toggleCart.js";
+import {openCart} from "./toggle.js";
 import {
   displayCartItemCount,
   displayCartTotal,
   displaycartItemsElem,
-} from "./renderCart.js";
-import {slider} from "./renderCart.js";
+} from "./render.js";
+import {slider} from "./render.js";
 
 let StateChanged;
 const swiperWrapper = document.querySelector(".swiper-wrapper");

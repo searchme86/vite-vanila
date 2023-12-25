@@ -11,10 +11,10 @@ import {
   nextSlideButton,
   textCurrentSlideNumber,
   textTotalSlideNumber,
-} from "./sliderData";
+} from "./data";
 
 import {fetchSingleProducts} from "../../api/fetchProducts";
-import {createImageElement, createMainImageElement} from "./sliderData";
+import {createImageElement, createMainImageElement} from "./data";
 import {zoomInElem} from "../zoomIn";
 
 export const slider = async () => {

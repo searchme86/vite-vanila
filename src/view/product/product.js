@@ -4,12 +4,12 @@ import "../asset/style/media/headerMedia.scss";
 import "../asset/style/pages/product.scss";
 
 import "../../component/bannerSlider";
-import "../../component/cart/toggleCart";
-import "../../component/cart/updateCart";
+import "../../component/cart/toggle";
+import "../../component/cart/update";
 import "../../component/youTube";
 
-import { addToCart } from "../../component/cart/updateCart";
-import { slider } from "../../component/slider/sliderComponent";
+import { addToCart } from "../../component/cart/update";
+import { slider } from "../../component/slider/component";
 import { fetchSingleProducts } from "../api/fetchProducts";
 import {
   rendererDetailItem,

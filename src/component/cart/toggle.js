@@ -8,7 +8,7 @@ import {
   toggleCartBtn,
 } from "../../util/cartElemDom.js";
 
-import {slider} from "./renderCart.js";
+import {slider} from "./render.js";
 
 const modalLayer = document.querySelector(".box__modal-layer");
 
