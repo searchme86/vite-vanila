@@ -1,3 +1,4 @@
+// TODO 무조건 약어 금지. 재사용되는곳에서는 약어를 쓰면 안됨. 파일명도 마찬가지.
 // TODO 불필요한 export 양산 금지
 const selectElement = (selector) => {
   const element = document.querySelector(selector);
