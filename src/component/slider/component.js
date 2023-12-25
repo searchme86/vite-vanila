@@ -13,7 +13,7 @@ import {
   textTotalSlideNumber,
 } from "./data";
 
-import {fetchSingleProducts} from "../../api/fetchProducts";
+import {getProduct} from "../../api/product";
 import {createImageElement, createMainImageElement} from "./data";
 import {zoomInElem} from "../zoomIn";
 
@@ -25,7 +25,7 @@ export const slider = async () => {
   }
   const searchParam = parseInt(match[0], 10);
 
-  const {images, title} = await fetchSingleProducts(searchParam);
+  const {images, title} = await getProduct(searchParam);
 
   const state = {
     currentSlideIndex: 0,

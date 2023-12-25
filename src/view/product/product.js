@@ -10,7 +10,7 @@ import "../../component/youTube";
 
 import { addToCart } from "../../component/cart/update";
 import { slider } from "../../component/slider/component";
-import { fetchSingleProducts } from "../api/fetchProducts";
+import { getProduct } from "../../api/product/product";
 import {
   rendererDetailItem,
   rendererInfoDescription,
@@ -31,7 +31,7 @@ const init = async () => {
     const some = document.querySelector(".box__info-description");
     const itemTable = document.querySelector(".box__item-table");
 
-    const item = await fetchSingleProducts(result);
+    const item = await getProduct(result);
 
     const itemDetailDOM = rendererDetailItem(item);
     document.querySelector(".box__item-arrange").innerHTML = itemDetailDOM;

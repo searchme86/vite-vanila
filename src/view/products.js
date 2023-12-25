@@ -7,7 +7,7 @@ import "../component/bannerSlider";
 import "../component/cart/toggle";
 import "../component/cart/update";
 
-import { fetchProducts } from "../api/fetchProducts";
+import { getProducts } from "../api/product";
 import { storeState, setStoreState } from "../store/store";
 import { addItemsToContainer } from "../util/render";
 import renderSearchComponent from "../component/search";
@@ -17,7 +17,7 @@ const initializeApp = async () => {
   const productContainer = document.querySelector(".list__card-products");
 
   if (storeState.length < 1) {
-    const products = await fetchProducts();
+    const products = await getProducts();
     setStoreState(products);
   }
   addItemsToContainer(storeState, productContainer);
