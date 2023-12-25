@@ -8,7 +8,7 @@ import "./component/toggle";
 import "./component/update";
 
 import { getProducts } from "../api/product";
-import { storeState, setStoreState } from "../../store/store";
+import { storeState, setStoreState } from "./store";
 import { addItemsToContainer } from "../util/render";
 import renderSearchComponent from "./component/search";
 import { renderCompanyComponent } from "../../component/companies";

@@ -2,7 +2,7 @@
  * 상품 페이지(products.html)에서 카드 상품에 대한 스크립트
  */
 
-import {getItemFromLocalStorage} from "../../../store/store";
+import {getItemFromLocalStorage} from "../store";
 import {rendererCreateCartItem} from "../../util/render";
 import {renderSwiper} from "../../../lib/swiper/swiper";
 
