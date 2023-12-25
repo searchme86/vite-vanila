@@ -41,10 +41,33 @@ const findStoreItemById = (id) => {
   return storeState.find((product) => product.id === Number(id));
 };
 
+// TODO 이것도 왠만하면 상태가 아니라 값을 받는식이 좋긴함.
+export const totalAmount = () => {
+  const cartState = getStoreItem("cart");
+  const totalCount = cartState.reduce(
+    (countNum, cartItem) => countNum + cartItem.amount,
+    0,
+  );
+  return totalCount;
+}
+
+
+// TODO 이것도 왠만하면 상태가 아니라 값을 받는식이 좋긴함.
+const totalPrice = () => {
+  const cartState = getStoreItem("cart");
+  const totalPrice = cartState.reduce(
+    (total, cartItem) => total + cartItem.price * cartItem.amount,
+    0,
+  );
+  return totalPrice;
+}
+
 export {
   findStoreItemById,
   getStoreItem,
   setStoreItem,
   setStoreState,
   storeState,
+  totalAmount,
+  totalPrice,
 };

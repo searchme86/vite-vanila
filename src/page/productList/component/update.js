@@ -11,9 +11,9 @@ import {findStoreItemById} from "../store.js";
 import {rendererCreateCartItem} from "../../util/itemTemplate.js";
 import {openCart} from "./toggle.js";
 import {
-  displayCartItemCount,
-  displayCartTotal,
-  displaycartItemsElem,
+  changeCartItemCount,
+  changeCartTotal,
+  changeCartItems,
 } from "./render.js";
 import {slider} from "./render.js";
 
@@ -23,8 +23,8 @@ const swiperWrapper = document.querySelector(".swiper-wrapper");
 // 최신 상품 정보를 보여주는 함수
 const updateCartAndDisplay = () => {
   setStoreItem("cart", StateChanged);
-  displayCartItemCount();
-  displayCartTotal();
+  changeCartItemCount();
+  changeCartTotal();
 };
 
 // 클릭 한 domDataSetId에 따라 아이템의 숫자를 update 하는 함수
@@ -135,9 +135,9 @@ export const addToCart = (domDataSetId) => {
 };
 
 const init = () => {
-  displayCartItemCount();
-  displayCartTotal();
-  displaycartItemsElem();
+  changeCartItemCount();
+  changeCartTotal();
+  changeCartItems();
   processCart();
 };
 
