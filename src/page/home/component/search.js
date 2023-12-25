@@ -1,9 +1,3 @@
-/**
- * 의존파일 : home.js
- * 컴포넌트 위치 : index.html
- * 기능 : 메뉴 네비게이션 우측, 찾기 아이콘 클릭 시, 숨겨진 인풋박스가 이동하고, x버튼 누르면 사라지는 스크립트
- */
-
 (() => {
   const getElement = (selector) => document.querySelector(selector);
 
@@ -11,14 +5,14 @@
   const closeButton = getElement(".button__close");
   const searchBox = getElement(".box__search-box");
   const searchBoxInput = getElement(".box__search-box input");
-  const mainSliderElem = getElement(".box__main-item");
-  const headerTopElem = getElement(".box__header-top");
-  const headerBottomElem = getElement(".box__header-bottom");
+  const mainSliderElement = getElement(".box__main-item");
+  const headerTopElement = getElement(".box__header-top");
+  const headerBottomElement = getElement(".box__header-bottom");
 
   const updateSearchBoxSize = () => {
-    searchBox.style.width = mainSliderElem.clientWidth + "px";
-    searchBox.style.height = headerTopElem.clientHeight + "px";
-    searchBoxInput.style.height = headerTopElem.clientHeight + "px";
+    searchBox.style.width = mainSliderElement.clientWidth + "px";
+    searchBox.style.height = headerTopElement.clientHeight + "px";
+    searchBoxInput.style.height = headerTopElement.clientHeight + "px";
   };
 
   const activateSearchBox = () => {
@@ -37,7 +31,7 @@
     updateSearchBoxSize();
   };
 
-  headerBottomElem.style.height = headerTopElem.clientHeight + "px";
+  headerBottomElement.style.height = headerTopElement.clientHeight + "px";
 
   searchButton.onclick = () => {
     updateSearchBoxSize();
