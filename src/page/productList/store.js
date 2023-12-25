@@ -1,69 +1,50 @@
-/**
- * 상품 페이지(products.html)에서
- * 사용되는 상품 아이템을 localStorage에 저장하는 스크립트
- * */
+const getStoreItem = (item) => {
+  let result = [];
 
-const getItemFromLocalStorage = (item) => {
-  let result =
-    localStorage.getItem(item) === "undefined"
-      ? []
-      : localStorage.getItem(item);
+  if(localStorage.getItem(item) !== "undefined") {
+    result = localStorage.getItem(item);
+  }
+
   const singleSavedItem = JSON.parse(result) || [];
-  if (typeof singleSavedItem === "undefined") return;
+  if (typeof singleSavedItem === "undefined"){
+    return;
+  }
+
   return singleSavedItem;
 };
 
-const saveItemToLocalStorage = (name, item) => {
-  if (typeof item === "undefined") return;
-  localStorage.setItem(name, JSON.stringify(item));
+const setStoreItem = (name, item) => {
+  if (typeof item !== "undefined") {
+    localStorage.setItem(name, JSON.stringify(item));
+  }
 };
 
-let storeState = getItemFromLocalStorage("store");
-
-const mapBindProductField = (product) => {
-  const {
-    id,
-    title,
-    price,
-    category,
-    thumbnail,
-    description,
-    discountPercentage,
-    rating,
-    stock,
-    brand,
-  } = product;
-
-  return {
-    id,
-    title,
-    price,
-    category,
-    thumbnail,
-    description,
-    discountPercentage,
-    rating,
-    stock,
-    brand,
-  };
-};
+// TODO 이거 전혀 순수상태가 아님. let 으로 하면 다른 함수 호출될때 변질될 가능성 높음
+let storeState = getStoreItem("store");
 
 const setStoreState = (products) => {
-  saveItemToLocalStorage("store", products.map(mapBindProductField));
+  setStoreItem("store", products.map(product => ({
+    brand: product.brand,
+    category: product.category,
+    description: product.description,
+    discountPercentage: product.discountPercentage,
+    id: product.id,
+    price: product.price,
+    rating: product.rating,
+    stock: product.stock,
+    thumbnail: product.thumbnail,
+    title: product.title,
+  })));
 };
 
-const searchObjInfoByKey = (id) => {
-  const numberTypeId = Number(id);
-  const result = storeState.find((product) => {
-    return product.id === numberTypeId;
-  });
-  return result;
+const findStoreItemById = (id) => {
+  return storeState.find((product) => product.id === Number(id));
 };
 
 export {
-  getItemFromLocalStorage,
-  saveItemToLocalStorage,
-  storeState,
+  findStoreItemById,
+  getStoreItem,
+  setStoreItem,
   setStoreState,
-  searchObjInfoByKey,
+  storeState,
 };

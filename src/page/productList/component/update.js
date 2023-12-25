@@ -3,10 +3,10 @@
  */
 
 import {
-  getItemFromLocalStorage,
-  saveItemToLocalStorage,
+  getStoreItem,
+  setStoreItem,
 } from "../store.js";
-import {searchObjInfoByKey} from "../store.js";
+import {findStoreItemById} from "../store.js";
 
 import {rendererCreateCartItem} from "../../util/itemTemplate.js";
 import {openCart} from "./toggle.js";
@@ -22,7 +22,7 @@ const swiperWrapper = document.querySelector(".swiper-wrapper");
 
 // 최신 상품 정보를 보여주는 함수
 const updateCartAndDisplay = () => {
-  saveItemToLocalStorage("cart", StateChanged);
+  setStoreItem("cart", StateChanged);
   displayCartItemCount();
   displayCartTotal();
 };
@@ -30,7 +30,7 @@ const updateCartAndDisplay = () => {
 // 클릭 한 domDataSetId에 따라 아이템의 숫자를 update 하는 함수
 const updateCartItem = (domDataSetId, operationFunction) => {
   let newAmount;
-  let cartState = getItemFromLocalStorage("cart");
+  let cartState = getStoreItem("cart");
   StateChanged = cartState.map((cartItem) => {
     if (cartItem.id === Number(domDataSetId)) {
       newAmount = operationFunction(cartItem.amount);
@@ -51,7 +51,7 @@ const increaseAmount = (domDataSetId) =>
   updateCartItem(domDataSetId, (amount) => amount + 1);
 
 const removeItem = (domDataSetId) => {
-  let cartState = getItemFromLocalStorage("cart");
+  let cartState = getStoreItem("cart");
   StateChanged = cartState.filter(
     (cartItem) => cartItem.id !== Number(domDataSetId),
   );
@@ -102,17 +102,17 @@ const processCart = () => {
 
 // 상품 페이지, 개별 상품의 카트 이미지 버튼을 클릭 시, 활성함수
 export const addToCart = (domDataSetId) => {
-  let cartState = getItemFromLocalStorage("cart");
+  let cartState = getStoreItem("cart");
 
   let filteredItemByKey = cartState.find(
     (cartItem) => cartItem.id === Number(domDataSetId),
   );
 
   if (!filteredItemByKey) {
-    let itemInfoObjByKey = searchObjInfoByKey(domDataSetId);
+    let itemInfoObjByKey = findStoreItemById(domDataSetId);
     itemInfoObjByKey = {...itemInfoObjByKey, amount: 1};
     StateChanged = [...cartState, itemInfoObjByKey];
-    saveItemToLocalStorage("cart", StateChanged);
+    setStoreItem("cart", StateChanged);
     const cartItemElement = rendererCreateCartItem(itemInfoObjByKey);
 
     swiperWrapper.appendChild(cartItemElement);

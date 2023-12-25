@@ -2,14 +2,14 @@
  * 상품 페이지(products.html)에서 카드 상품에 대한 스크립트
  */
 
-import {getItemFromLocalStorage} from "../store";
+import {getStoreItem} from "../store";
 import {rendererCreateCartItem} from "../../util/render";
 import {renderSwiper} from "../../../lib/swiper/swiper";
 
 export let slider = renderSwiper();
 
 const updateCartState = () => {
-  return getItemFromLocalStorage("cart");
+  return getStoreItem("cart");
 };
 
 // 카드의 숫자를 증감하는 함수
@@ -41,7 +41,7 @@ export const displayCartTotal = () => {
 export const displaycartItemsElem = () => {
 const swiperList = document.querySelector(".swiper-wrapper");
 
-  let cartState = getItemFromLocalStorage("cart");
+  let cartState = getStoreItem("cart");
   cartState.forEach((item) => {
     const cartItemElement = rendererCreateCartItem(item);
     if (swiperList) {
