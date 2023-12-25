@@ -9,7 +9,7 @@ import {addItemsToContainer} from "../util/render.js";
 const inputFormElem = document.querySelector(".box__search-item");
 const nameInput = document.querySelector(".search-input");
 
-const renderSearchComponent = (store) => {
+export const renderSearchComponent = (store) => {
   const filterProductsByName = (value) =>
     store.filter((product) => product.title.toLowerCase().startsWith(value));
 
@@ -33,5 +33,3 @@ const renderSearchComponent = (store) => {
     displayFilteredProducts(newStore);
   });
 };
-
-export default renderSearchComponent;

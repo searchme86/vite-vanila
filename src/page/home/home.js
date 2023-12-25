@@ -7,7 +7,7 @@ import '../asset/style/media/homeMedia.scss';
 import '../asset/style/page/home.scss';
 
 import '../../component/bannerSlider';
+import '../../component/MainSlider';
 import './component/homeAccordion';
 import './component/homeSearch';
 import './component/homeSideBar';
-import '../../component/MainSlider';

@@ -9,7 +9,7 @@ import "./component/update";
 
 import { getProducts } from "../api/product";
 import { storeState, setStoreState } from "./store";
-import { addItemsToContainer } from "../util/render";
+import { addItemsToContainer } from "../../common/renderer";
 import renderSearchComponent from "./component/search";
 import { renderCompanyComponent } from "../../component/companies";
 
@@ -20,6 +20,7 @@ const initializeApp = async () => {
     const products = await getProducts();
     setStoreState(products);
   }
+
   addItemsToContainer(storeState, productContainer);
   renderSearchComponent(storeState);
   renderCompanyComponent(storeState);
