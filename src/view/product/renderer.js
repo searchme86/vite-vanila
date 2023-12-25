@@ -1,5 +1,4 @@
 export const rendererDetailItem = ({
-    amount,
     brand,
     description,
     discountPercentage,
