@@ -6,7 +6,7 @@ import {
   cartOverlay,
   closeCartBtn,
   toggleCartBtn,
-} from "../../utils/cartElemDom.js";
+} from "../../util/cartElemDom.js";
 
 import {slider} from "./renderCart.js";
 

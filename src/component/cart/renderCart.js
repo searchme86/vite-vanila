@@ -3,8 +3,8 @@
  */
 
 import {getItemFromLocalStorage} from "../../store/store";
-import {cartItemCount, cartTotal, swiperList} from "../../utils/cartElemDom";
-import {rendererCreateCartItem} from "../../utils/itemTemplate";
+import {cartItemCount, cartTotal, swiperList} from "../../util/cartElemDom";
+import {rendererCreateCartItem} from "../../util/render";
 import {renderSwiper} from "../../lib/swiper/swiper";
 
 export let slider = renderSwiper();

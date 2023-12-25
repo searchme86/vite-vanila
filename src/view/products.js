@@ -7,10 +7,10 @@ import "../component/bannerSlider";
 import "../component/cart/toggleCart";
 import "../component/cart/updateCart";
 
-import { productContainer } from "../utils/cartElemDom";
+import { productContainer } from "../util/cartElemDom";
 import { fetchProducts } from "../api/fetchProducts";
 import { storeState, setStoreState } from "../store/store";
-import { addItemsToContainer } from "../utils/render";
+import { addItemsToContainer } from "../util/render";
 import renderSearchComponent from "../component/search";
 import { renderCompanyComponent } from "../component/companies";
 

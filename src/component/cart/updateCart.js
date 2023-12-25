@@ -2,14 +2,14 @@
  * 상품 페이지(products.html)에서 카트 이미지 버튼 클릭시, 초기 start 스크립트
  */
 
-import {cartItems} from "../../utils/cartElemDom.js";
+import {cartItems} from "../../util/cartElemDom.js";
 import {
   getItemFromLocalStorage,
   saveItemToLocalStorage,
 } from "../../store/store.js";
 import {searchObjInfoByKey} from "../../store/store.js";
 
-import {rendererCreateCartItem} from "../../utils/itemTemplate.js";
+import {rendererCreateCartItem} from "../../util/itemTemplate.js";
 import {openCart} from "./toggleCart.js";
 import {
   displayCartItemCount,

@@ -3,9 +3,9 @@
  * 상품 검색 스크립트
  */
 
-import {inputFormElem, nameInput} from "../utils/cartElemDom.js";
-import {addItemsToContainer} from "../utils/render.js";
-import {productContainer} from "../utils/cartElemDom.js";
+import {inputFormElem, nameInput} from "../util/cartElemDom.js";
+import {addItemsToContainer} from "../util/render.js";
+import {productContainer} from "../util/cartElemDom.js";
 
 const renderSearchComponent = (store) => {
   const filterProductsByName = (value) =>

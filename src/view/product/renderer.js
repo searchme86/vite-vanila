@@ -1,3 +1,6 @@
+// TODO html 로 되어있으면 오타 발생률이 높아보임. 더 좋은 방법으로 개선 필요.
+// 예_text__valaue,
+
 export const rendererDetailItem = ({
     brand,
     description,

@@ -4,8 +4,8 @@
  * 해당 텍스트 클릭 시, 해당 메뉴 필터링
  */
 
-import {addItemsToContainer} from "../utils/render.js";
-import {companiesDOM, productContainer} from "../utils/cartElemDom.js";
+import {addItemsToContainer} from "../util/render.js";
+import {companiesDOM, productContainer} from "../util/cartElemDom.js";
 
 const filterStoreByCompany = (category, store) => {
   return category === "all"
