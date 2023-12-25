@@ -1,21 +1,27 @@
-/**
- * 상품상세 페이지(product.html)에서 tab 스크립트
- */
-
 const tabMenuList = document.querySelectorAll(
   ".list__tab-menu .list-item__tab-menu",
 );
 const tabContentList = document.querySelectorAll(".list__tab-content li");
 
+// TODO 단순실수 줄이기 위해서 이런것도 좋은듯.
+function setAttributes(el, attrs) {
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]);
+  }
+}
+
 const resetTab = () => {
   tabMenuList.forEach((singleTabMenu, index) => {
     singleTabMenu.classList.remove("list-item__tab-box--active");
-    singleTabMenu.setAttribute("aria-selected", "false");
-    singleTabMenu.setAttribute("tabindex", "-1");
 
     const tabContent = tabContentList[index];
-    singleTabMenu.setAttribute("aria-controls", tabContent.id);
     tabContent.setAttribute("aria-labelledby", singleTabMenu.id);
+
+    setAttributes(singleTabMenu, {
+      "aria-selected": "false",
+      "tabindex": "-1",
+      "aria-controls": tabContent.id,
+    });
   });
 
   tabContentList.forEach((tabContent) => {
@@ -27,21 +33,23 @@ const resetTab = () => {
 const setActiveTab = (currentTabIndex) => {
   tabMenuList.forEach((singleTabMenu, tabMenuIndex) => {
     const isMenuMatched = tabMenuIndex === currentTabIndex;
+
     singleTabMenu.classList.toggle("list-item__tab-box--active", isMenuMatched);
-    singleTabMenu.setAttribute(
-      "aria-selected",
-      isMenuMatched ? "true" : "false",
-    );
-    singleTabMenu.setAttribute("tabindex", isMenuMatched ? "0" : "-1");
+    setAttributes(singleTabMenu, {
+      "aria-selected": isMenuMatched ? "true" : "false",
+      "tabindex": isMenuMatched ? "0" : "-1",
+      "aria-controls": currentTabContent.id,
+    });
 
     const currentTabContent = tabContentList[tabMenuIndex];
-    singleTabMenu.setAttribute("aria-controls", currentTabContent.id);
-    currentTabContent.setAttribute("aria-labelledby", singleTabMenu.id);
     currentTabContent.classList.toggle(
       "list-item__tab-box--active",
       isMenuMatched,
     );
-    currentTabContent.setAttribute("hidden", !isMenuMatched);
+    setAttributes(currentTabContent, {
+      "aria-labelledby": singleTabMenu.id,
+      "hidden": !isMenuMatched,
+    });
   });
 };
 
