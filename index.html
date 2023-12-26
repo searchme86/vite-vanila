@@ -19,6 +19,19 @@
     <title>Pages | Home</title>
   </head>
   <body>
+    <!-- skip navigation -->
+    <div id="skip-navigation">
+      <ul>
+        <li><a href="#main">본문 바로가기</a></li>
+        <li><a href="#home-slide">홈 슬라이드</a></li>
+        <li><a href="#button-slide">버튼 슬라이드</a></li>
+        <li><a href="#category-accordion">카테고리 아코디언</a></li>
+        <li><a href="#scroll-slide">스크롤 슬라이드</a></li>
+        <li><a href="#blog">블로그</a></li>
+        <li><a href="#footer">푸터</a></li>
+      </ul>
+    </div>
+
     <!-- header -->
     <header>
       <div class="box__header-top">
@@ -495,9 +508,9 @@
     </header>
 
     <!-- main -->
-    <main class="section__products">
-      <!-- 홈 메인 슬라이더 -->
-      <div class="section__main">
+    <main class="section__products" id="main">
+      <!-- 홈 슬라이드 -->
+      <div class="section__main" id="home-slide">
         <div class="box__inner-container">
           <strong class="offscreen">메인 슬라이더</strong>
           <div class="box__main-slider">
@@ -549,8 +562,8 @@
         </div>
       </div>
 
-      <!-- 홈 슬라이더 -->
-      <div class="section__top">
+      <!-- 버튼 슬라이드 -->
+      <div class="section__top" id="button-slide">
         <div class="container">
           <div class="box__sub-slider">
             <strong class="text__section-title">
@@ -680,11 +693,11 @@
         </div>
       </div>
 
-      <!-- 홈 카테고리 아코디언 및 배너 슬라이더 -->
+      <!-- 카테고리 아코디언 및 스크롤 슬라이더 -->
       <div class="section__center">
         <div class="box__inner-container">
           <!-- 홈 카테고리 아코디언 -->
-          <div class="box__stock-category">
+          <div class="box__stock-category" id="category-accordion">
             <div class="box__category">
               <div class="box__section-top">
                 <strong class="text__category-title">lorem</strong>
@@ -971,8 +984,9 @@
               </ul>
             </div>
           </div>
+
           <!-- 홈 배너 슬라이더 -->
-          <div class="box__scrollbar">
+          <div class="box__scrollbar" id="scroll-slide">
             <strong class="text__section-title">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </strong>
@@ -1462,7 +1476,7 @@
       </div>
 
       <!-- 홈 블로그 섹션 -->
-      <div class="section__bottom">
+      <div class="section__bottom" id="blog">
         <div class="box__inner-container">
           <strong class="text__section-title">
             Lorem ipsum dolor sit amet consectetur
@@ -1550,7 +1564,7 @@
     </main>
 
     <!-- footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="section__footer-top">
         <div class="box__inner-container">
           <section class="box__footer-logo">
