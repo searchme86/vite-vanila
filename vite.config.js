@@ -6,6 +6,7 @@ import terser from "@rollup/plugin-terser";
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/vite-vanila/" : "./",
   build: {
+    sourcemap: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, "./index.html"),
@@ -50,5 +51,6 @@ export default defineConfig({
   ],
   server: {
     open: true,
+    logLevel: "info",
   },
 });
