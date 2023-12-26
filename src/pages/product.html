@@ -23,6 +23,18 @@
     />
   </head>
   <body>
+    <!-- skip navigation -->
+    <div id="skip-navigation">
+      <ul>
+        <li><a href="#main">본문 바로가기</a></li>
+        <li><a href="#slide">상품 이미지 미리보기</a></li>
+        <li><a href="#detail">상품 상세</a></li>
+        <li><a href="#specification">상품 스펙</a></li>
+        <li><a href="#info">상품 정보</a></li>
+        <li><a href="#footer">푸터</a></li>
+      </ul>
+    </div>
+
     <!-- header -->
     <header>
       <div class="box__header-top">
@@ -622,11 +634,11 @@
     </header>
 
     <!-- main -->
-    <main>
+    <main id="main">
       <section class="section__item-introduction">
         <h1 class="offscreen">상품 상세페이지</h1>
         <div class="box__inner-container">
-          <div class="box__preview">
+          <div class="box__preview" id="slide">
             <div class="box__preview-image">
               <div class="box__preview-contents">
                 <strong class="offscreen">상품 슬라이더</strong>
@@ -654,7 +666,7 @@
               </div>
             </div>
           </div>
-          <div class="box__item-detail">
+          <div class="box__item-detail" id="detail">
             <div class="box__item-arrange"></div>
           </div>
         </div>
@@ -687,14 +699,14 @@
                 id="tabpanel1"
                 role="tabpanel"
               >
-                <div class="box__item-table"></div>
+                <div class="box__item-table" id="specification"></div>
                 <section class="box__youtube">
                   <strong class="offscreen">유튜브 영상</strong>
                   <div class="box__youtube-view-area">
                     <div id="player"></div>
                   </div>
                 </section>
-                <div class="box__info-description"></div>
+                <div class="box__info-description" id="info"></div>
               </li>
               <li class="list-item__tab-box" id="tabpanel2" role="tabpanel">
                 <strong class="text__content-title">가격비교</strong>
