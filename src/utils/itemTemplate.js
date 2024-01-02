@@ -381,7 +381,7 @@ export const createInfoDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/dummyImage01.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage01.png" alt="lego batman"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -392,7 +392,7 @@ export const createInfoDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/dummyImage02.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage02.png" alt="lego batman"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -403,7 +403,7 @@ export const createInfoDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/dummyImage03.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage03.png" alt="lego batman"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>

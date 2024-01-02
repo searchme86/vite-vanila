@@ -7,6 +7,10 @@ const sections = document.querySelectorAll(".section__blog");
 const sectionTopOffsets = [];
 const sectionBottomOffsets = [];
 
+const getCurrentScrollTop = () => {
+  return window.scrollY || (window.scrollY === 0 ? 0 : window.pageYOffset);
+};
+
 const updateValues = () => {
   currentScrollTop = getCurrentScrollTop();
 
@@ -16,10 +20,6 @@ const updateValues = () => {
     sectionBottomOffsets[index] =
       sectionTopOffsets[index] + section.offsetHeight;
   });
-};
-
-const getCurrentScrollTop = () => {
-  return window.scrollY || (window.scrollY === 0 ? 0 : window.pageYOffset);
 };
 
 const isInViewport = (index) => {

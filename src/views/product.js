@@ -2,6 +2,11 @@ import "../assets/style/components/header.scss";
 import "../assets/style/components/footer.scss";
 import "../assets/style/pages/product.scss";
 import "../assets/style/media/headerMedia.scss";
+import "../assets/style/media/productMedia.scss";
+import "../assets/style/media/footerMedia.scss";
+
+import "../components/homeSideBar";
+import "../components/homeSearch";
 
 import "../components/cart/toggleCart";
 import "../components/cart/updateCart";

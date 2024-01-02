@@ -11,12 +11,10 @@
   const closeButton = getElement(".button__close");
   const searchBox = getElement(".box__search-box");
   const searchBoxInput = getElement(".box__search-box input");
-  const mainSliderElem = getElement(".box__main-item");
   const headerTopElem = getElement(".box__header-top");
-  const headerBottomElem = getElement(".box__header-bottom");
 
   const updateSearchBoxSize = () => {
-    searchBox.style.width = mainSliderElem.clientWidth + "px";
+    searchBox.style.width = headerTopElem.clientWidth + "px";
     searchBox.style.height = headerTopElem.clientHeight + "px";
     searchBoxInput.style.height = headerTopElem.clientHeight + "px";
   };
@@ -37,8 +35,6 @@
     updateSearchBoxSize();
   };
 
-  headerBottomElem.style.height = headerTopElem.clientHeight + "px";
-
   searchButton.onclick = () => {
     updateSearchBoxSize();
     activateSearchBox();
@@ -47,4 +43,34 @@
   closeButton.onclick = deactivateSearchBox;
 
   window.addEventListener("resize", resizeHandler);
+})();
+
+(() => {
+  const headerElem = document.querySelector("header");
+  const searchBox = document.querySelector(".box__search .box__search-box");
+  const searchBoxOpenButton = document.querySelector(
+    ".box__control-box .button__search",
+  );
+  const searchBoxCloseButton = document.querySelector(
+    ".box__control-box .button__close",
+  );
+
+  let treshHold = headerElem.offsetHeight;
+
+  const updateDimensions = () => {
+    treshHold = headerElem.offsetHeight;
+  };
+
+  const activeElemOnScroll = () => {
+    const isScrolledPastHeader = window.scrollY > treshHold;
+
+    if (isScrolledPastHeader) {
+      searchBoxOpenButton.classList.remove("active");
+      searchBoxCloseButton.classList.remove("active");
+      searchBox.classList.remove("active");
+    }
+  };
+
+  window.addEventListener("scroll", activeElemOnScroll);
+  window.addEventListener("resize", updateDimensions);
 })();

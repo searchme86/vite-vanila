@@ -16,6 +16,10 @@
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Expires" content="-1" />
     <meta name="robots" content="index, follow" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Pages | Blog</title>
   </head>
   <body>
@@ -44,64 +48,44 @@
               </div>
             </a>
           </h1>
-          <div class="box__header-actions">
-            <div class="box__bestSeller">
-              <strong class="text__module-title">
-                신규등록상품(
-                <span class="text__product-number"></span>
-                )
-              </strong>
-              <div class="box__bestSeller-contents">
-                <ul class="list__bestSeller">
-                  <li class="list-item__bestSeller">
-                    <a href="javascript:void(0);">
-                      <span class="text__link-title">레고1</span>
-                    </a>
-                  </li>
-                  <li class="list-item__bestSeller">
-                    <a href="javascript:void(0);">
-                      <span class="text__link-title">레고2</span>
-                    </a>
-                  </li>
-                  <li class="list-item__bestSeller">
-                    <a href="javascript:void(0);">
-                      <span class="text__link-title">레고3</span>
-                    </a>
-                  </li>
-                </ul>
+          <ul class="list__header-actions">
+            <li>
+              <button
+                type="button"
+                class="button__navigation-menu button__open-subMenu"
+              >
+                <ion-icon name="menu-outline">
+                  <span class="offscreen">모바일 메뉴 열기</span>
+                </ion-icon>
+              </button>
+            </li>
+            <li>
+              <div class="box__item-cart">
+                <button type="button" class="button__item-cart">
+                  <ion-icon name="cart-outline"></ion-icon>
+                </button>
+                <span class="text__count">1</span>
               </div>
-              <div class="box__slide-control">
-                <button type="button" class="button__slide button__slide-start">
-                  <span class="offscreen">배너재생</span>
+            </li>
+          </ul>
+          <div class="box__header-actions">
+            <div class="box__search">
+              <div class="box__control-box">
+                <button type="button" class="button__search">
+                  <ion-icon name="search-outline">
+                    <span class="offscreen">검색창 열기</span>
+                  </ion-icon>
                 </button>
-                <button type="button" class="button__slide button__slide-stop">
-                  <span class="offscreen">배너정지</span>
+                <button type="button" class="button__close">
+                  <ion-icon name="close-outline">
+                    <span class="offscreen">검색창 닫기</span>
+                  </ion-icon>
                 </button>
+              </div>
+              <div class="box__search-box">
+                <input type="text" placeholder="어떤 제품을 찾고 계신가요?" />
               </div>
             </div>
-            <ul class="list__header-actions">
-              <li>
-                <button
-                  type="button"
-                  class="button__header-actions button__user-login"
-                >
-                  <div class="box__image">
-                    <img
-                      src="../assets/images/user.png"
-                      alt="로그인 유저 이미지"
-                    />
-                  </div>
-                </button>
-              </li>
-              <li>
-                <div class="box__item-cart">
-                  <button type="button" class="button__item-cart">
-                    <ion-icon name="cart-outline"></ion-icon>
-                  </button>
-                  <span class="text__count">1</span>
-                </div>
-              </li>
-            </ul>
           </div>
           <div class="box__mobile">
             <nav class="box__mSideBar">
@@ -258,35 +242,240 @@
                 </li>
               </ul>
             </nav>
-            <div class="box__mobile-navigation">
-              <button
-                type="button"
-                class="button__navigation-menu button__open-subMenu"
-              >
-                <ion-icon name="menu-outline">
-                  <span class="offscreen">모바일 메뉴 열기</span>
-                </ion-icon>
-              </button>
-              <button type="button" class="button__navigation-menu">
-                <ion-icon name="bag-handle-outline">
-                  <span class="offscreen">장바구니</span>
-                </ion-icon>
-                <span class="count">0</span>
-              </button>
-              <button type="button" class="button__navigation-menu">
-                <ion-icon name="home-outline">
-                  <span class="offscreen">홈으로 이동</span>
-                </ion-icon>
-              </button>
-              <button type="button" class="button__navigation-menu">
-                <ion-icon name="heart-outline">
-                  <span class="offscreen">좋아요 상품으로 이동</span>
-                </ion-icon>
-                <span class="count">0</span>
-              </button>
-            </div>
           </div>
         </div>
+      </div>
+
+      <div class="box__header-bottom">
+        <div class="box__bestSeller">
+          <strong class="text__module-title">
+            신규등록상품(
+            <span class="text__product-number"></span>
+            )
+          </strong>
+          <div class="box__bestSeller-contents">
+            <ul class="list__bestSeller">
+              <li class="list-item__bestSeller">
+                <a href="javascript:void(0);">
+                  <span class="text__link-title">
+                    레고® DC 배트맨™ 배트모빌™ 텀블러
+                  </span>
+                </a>
+              </li>
+              <li class="list-item__bestSeller">
+                <a href="javascript:void(0);">
+                  <span class="text__link-title">
+                    배트케이브™ – 섀도우 박스
+                  </span>
+                </a>
+              </li>
+              <li class="list-item__bestSeller">
+                <a href="javascript:void(0);">
+                  <span class="text__link-title">잃어버린 무덤에서의 탈출</span>
+                </a>
+              </li>
+              <li class="list-item__bestSeller">
+                <a href="javascript:void(0);">
+                  <span class="text__link-title">스파이더맨 최종 결전</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="box__slide-control">
+            <button type="button" class="button__slide button__slide-start">
+              <span class="offscreen">배너재생</span>
+            </button>
+            <button type="button" class="button__slide button__slide-stop">
+              <span class="offscreen">배너정지</span>
+            </button>
+          </div>
+        </div>
+        <nav class="box__header-navigation">
+          <ul class="list__header-menu">
+            <li class="list-item__header-menu">
+              <a href="./index.html">
+                <span class="text__menu-title">Home</span>
+              </a>
+            </li>
+            <li class="list-item__header-menu">
+              <a href="./src/pages/products.html">
+                <span class="text__menu-title">Products</span>
+              </a>
+            </li>
+            <li class="list-item__header-menu">
+              <a href="javascript:void(0);">
+                <span class="text__menu-title">untitled</span>
+              </a>
+              <div class="box__dropdown-menu">
+                <div class="box__dropdown">
+                  <strong class="text__menu-title">서브메뉴1</strong>
+                  <ul class="list__dropdown-menu">
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">서브메뉴1-1</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">서브메뉴1-2</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">서브메뉴1-3</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">서브메뉴1-4</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">서브메뉴1-5</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);" class="link__banner-image">
+                        <div class="box__image">
+                          <img
+                            src="./src/assets/images/dummyImage01.png"
+                            alt="lego batman"
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="box__dropdown">
+                  <strong class="text__menu-title">Men's</strong>
+                  <ul class="list__dropdown-menu">
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);" class="link__banner-image">
+                        <div class="box__image">
+                          <img
+                            src="./src/assets/images/dummyImage02.png"
+                            alt="lego batman"
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="box__dropdown">
+                  <strong class="text__menu-title">Women's</strong>
+                  <ul class="list__dropdown-menu">
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);" class="link__banner-image">
+                        <div class="box__image">
+                          <img
+                            src="./src/assets/images/dummyImage03.png"
+                            alt="lego batman"
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="box__dropdown">
+                  <strong class="text__menu-title">Electronics</strong>
+                  <ul class="list__dropdown-menu">
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);">
+                        <span class="text__subMenu">Microphone</span>
+                      </a>
+                    </li>
+                    <li class="list-item__dropdown-menu">
+                      <a href="javascript:void(0);" class="link__banner-image">
+                        <div class="box__image">
+                          <img
+                            src="./src/assets/images/dummyImage04.png"
+                            alt="lego batman"
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="list-item__header-menu">
+              <a href="javascript:void(0);">
+                <span class="text__menu-title">메뉴</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
@@ -294,7 +483,50 @@
     <main id="main">
       <article class="box__blog-article">
         <h1 class="text__blog-title">The Lego Batman vs Superman</h1>
-
+        <div class="box__blog-description">
+          <div class="box__social">
+            <div class="box__social-icon">
+              <a href="javascript:void(0);">
+                <button type="button" class="button__social-icon">
+                  <i class="fab fa-facebook-f">
+                    <span class="offscreen">페이스북 아이콘</span>
+                  </i>
+                </button>
+                <span class="text__social-icon">Facebook</span>
+              </a>
+            </div>
+            <div class="box__social-icon">
+              <a href="javascript:void(0);">
+                <button type="button" class="button__social-icon">
+                  <i class="fab fa-twitter">
+                    <span class="offscreen">트위터 아이콘</span>
+                  </i>
+                </button>
+                <span class="text__social-icon">Twitter</span>
+              </a>
+            </div>
+            <div class="box__social-icon">
+              <a href="javascript:void(0);">
+                <button type="button" class="button__social-icon">
+                  <i class="fab fa-instagram">
+                    <span class="offscreen">인스타그램 아이콘</span>
+                  </i>
+                </button>
+                <span class="text__social-icon">Instagram</span>
+              </a>
+            </div>
+            <div class="box__social-icon">
+              <a href="javascript:void(0);">
+                <button type="button" class="button__social-icon">
+                  <i class="fab fa-youtube">
+                    <span class="offscreen">유튜브 아이콘</span>
+                  </i>
+                </button>
+                <span class="text__social-icon">YouTube</span>
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="box__fixed-scrollbar">
           <div class="box__fixed-title">
             <div class="box__fixed-image">
@@ -306,9 +538,10 @@
             </div>
             <strong class="text__fixed-title"></strong>
           </div>
-          <div id="scroll-bar"></div>
+          <div id="scroll-bar">
+            <strong class="offscreen">페이지 스크롤 인디케이터</strong>
+          </div>
         </div>
-
         <div class="box__blog-image">
           <div class="box__image">
             <img
@@ -317,7 +550,6 @@
             />
           </div>
         </div>
-
         <div class="box__blog-content">
           <div class="box__blog-text">
             <div class="section__blog" id="section__a">

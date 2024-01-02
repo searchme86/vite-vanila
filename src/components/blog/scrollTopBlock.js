@@ -9,6 +9,14 @@ const mainFixedElemTitle = document.querySelector(
   ".box__fixed-scrollbar .text__fixed-title",
 );
 const mainBlogImage = document.querySelector(".box__blog-image");
+const blogMenu = document.querySelector(".box__blog-menu");
+const searchBox = document.querySelector(".box__search .box__search-box");
+const searchBoxOpenButton = document.querySelector(
+  ".box__control-box .button__search",
+);
+const searchBoxCloseButton = document.querySelector(
+  ".box__control-box .button__close",
+);
 
 mainFixedElemTitle.textContent = mainTitle.textContent;
 let headerOffsetHeight = headerElem.offsetHeight;
@@ -18,14 +26,6 @@ let treshHold =
   mainBlogImage.offsetTop +
   mainBlogImage.offsetHeight;
 
-const addEventOnElem = (elem, type, callback) => {
-  if (elem.length) {
-    elem.forEach((item) => item.addEventListener(type, callback));
-  } else {
-    elem.addEventListener(type, callback);
-  }
-};
-
 const updateDimensions = () => {
   headerOffsetHeight = headerElem.offsetHeight;
   treshHold =
@@ -34,14 +34,24 @@ const updateDimensions = () => {
 
 const activeElemOnScroll = () => {
   const isScrolledPastHeader = window.scrollY > headerOffsetHeight;
-  headerElem.classList.toggle("hide", isScrolledPastHeader);
-  mainFixedElem.classList.toggle("scroll", isScrolledPastHeader);
+  const isPastTreshHold = window.scrollY > treshHold;
+
+  if (isScrolledPastHeader) {
+    mainFixedElem.classList.add("scroll");
+    searchBoxOpenButton.classList.remove("active");
+    searchBoxCloseButton.classList.remove("active");
+    searchBox.classList.remove("active");
+  } else {
+    mainFixedElem.classList.remove("scroll");
+  }
+  if (isPastTreshHold) {
+    mainFixedElem.classList.add("textUp");
+    blogMenu.classList.add("show");
+  } else {
+    mainFixedElem.classList.remove("textUp");
+    blogMenu.classList.remove("show");
+  }
 };
 
-const hideText = () => {
-  mainFixedElem.classList.toggle("textUp", window.scrollY > treshHold);
-};
-
-addEventOnElem(window, "scroll", activeElemOnScroll);
-addEventOnElem(window, "scroll", hideText);
-addEventOnElem(window, "resize", updateDimensions);
+window.addEventListener("scroll", activeElemOnScroll);
+window.addEventListener("resize", updateDimensions);

@@ -33,9 +33,18 @@
         }
         .box__footer-content {
           display: block;
-          .text__footer-title {
-            &:not(:last-child) {
-              margin-top: 20px;
+          .box__footer-info {
+            .text__footer-title {
+              &:not(:last-child) {
+                margin-top: 20px;
+              }
+            }
+            .list__footer-info {
+              li {
+                .text__footer-item {
+                  font-size: 15px;
+                }
+              }
             }
           }
         }

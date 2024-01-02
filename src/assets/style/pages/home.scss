@@ -60,6 +60,7 @@
       }
     }
   }
+
   .section__top {
     max-width: 1170px;
     margin: 50px auto 0 auto;
@@ -156,6 +157,7 @@
       }
     }
   }
+
   .section__center {
     margin-top: 60px;
     .box__inner-container {
@@ -262,10 +264,10 @@
           display: flex;
           width: 100%;
           .list-item__scrollbar {
-            width: calc(50% - 45px);
+            min-width: calc(50% - 151px);
             .box__scrollbar-image {
               position: relative;
-              margin-bottom: 10px;
+              margin-bottom: 5px;
               height: 193px;
 
               .box__image {
@@ -294,9 +296,12 @@
             }
             .box__tag {
               .list__tag {
+                width: 100%;
                 display: flex;
-                margin-bottom: 15px;
+                flex-wrap: wrap;
+                margin-bottom: 5px;
                 li {
+                  margin-top: 5px;
                   .link__tag-item {
                     font-size: 14px;
                     padding: 2px 8px;
@@ -305,7 +310,7 @@
                     background-color: hsl(300, 8%, 95%);
                   }
                   &:not(:last-child) {
-                    margin-right: 10px;
+                    margin-right: 5px;
                   }
                 }
               }
@@ -349,10 +354,11 @@
       }
     }
   }
+
   .section__bottom {
     max-width: 1170px;
     width: 1170px;
-    margin: 60px auto 0 auto;
+    margin: 60px auto;
 
     .box__inner-container {
       display: flex;
@@ -436,6 +442,26 @@
   }
 }
 
+.box__scroll-animation {
+  width: 100%;
+  overflow: hidden;
+
+  .list__scroll-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 4800px;
+    height: 90px;
+    animation: auto-text-moving 8s linear infinite;
+    -webkit-animation: auto-text-moving 8s linear infinite;
+
+    .list-item__scroll-track {
+      width: 400px;
+      text-align: center;
+    }
+  }
+}
+
 .box__overlay {
   position: fixed;
   top: 0;
@@ -450,5 +476,14 @@
   &.active {
     opacity: 1;
     pointer-events: all;
+  }
+}
+
+@keyframes auto-text-moving {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -400px;
   }
 }

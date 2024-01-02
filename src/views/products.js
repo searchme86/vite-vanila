@@ -2,6 +2,8 @@ import "../assets/style/components/header.scss";
 import "../assets/style/components/footer.scss";
 import "../assets/style/pages/products.scss";
 import "../assets/style/media/headerMedia.scss";
+import "../assets/style/media/productsMedia.scss";
+import "../assets/style/media/footerMedia.scss";
 
 import "../components/cart/toggleCart";
 import "../components/cart/updateCart";

@@ -35,9 +35,11 @@ const handleCompanyButtonClick = (event, store) => {
 
   items.forEach((item) => {
     item.classList.remove("active");
+    item.removeAttribute("aria-pressed", false);
   });
 
   element.parentElement.classList.add("active");
+  element.parentElement.setAttribute("aria-pressed", true);
 
   if (element.classList.contains("button__item-company")) {
     addItemsToContainer(

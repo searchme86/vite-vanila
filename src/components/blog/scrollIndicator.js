@@ -4,6 +4,11 @@
 
 const scrollBarElement = document.getElementById("scroll-bar");
 
+const updateScrollBarStyle = (percentage) => {
+  scrollBarElement.style.transform = `translateX(-${100 - percentage}%)`;
+  scrollBarElement.style.transition = "transform 0.3s ease-out";
+};
+
 const updateScrollBar = () => {
   if (!scrollBarElement) return;
 
@@ -15,11 +20,6 @@ const updateScrollBar = () => {
     contentHeight > 0 ? (scrollTop / contentHeight) * 100 : 0;
 
   updateScrollBarStyle(scrollPercentage);
-};
-
-const updateScrollBarStyle = (percentage) => {
-  scrollBarElement.style.transform = `translateX(-${100 - percentage}%)`;
-  scrollBarElement.style.transition = "transform 0.3s ease-out";
 };
 
 const handleScroll = () => {

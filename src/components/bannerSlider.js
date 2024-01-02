@@ -1,5 +1,5 @@
 /**
- * 페이지 헤더, 우측에 자동으로 스크롤업 되는 스크립트 함수
+ * 자동으로 스크롤업 되는 스크립트 함수
  */
 
 (() => {
@@ -29,10 +29,6 @@
   const stopButton = document.querySelector(
     ".box__bestSeller .button__slide-stop",
   );
-
-  verticalSliderContainer.style.left = `${
-    verticalSliderTitle.clientWidth + 17
-  }px`;
 
   textContainer.textContent = listItemNumber;
   positionLastItem = (listItemNumber - 1) * slideMoveSize;

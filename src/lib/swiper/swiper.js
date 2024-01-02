@@ -26,6 +26,25 @@ export const renderSwiper = () => {
     },
     slidesPerView: 3,
     spaceBetween: 15,
+
+    breakpoints: {
+      360: {
+        slidesPerView: 1,
+        spaceBetween: 10,
+      },
+      760: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      861: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+    },
   });
 
   return imageSwiper;

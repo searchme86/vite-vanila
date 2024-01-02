@@ -7,7 +7,8 @@ import "../assets/style/media/blogMedia.scss";
 
 import "../components/homeAccordion";
 import "../components/homeSideBar";
+import "../components/homeSearch";
 import "../components/blog/scrollTopBlock";
-import "../components/blog/scrollIndicator";
 import "../components/blog/scrollMenu";
+import "../components/blog/scrollIndicator";
 import "../components/bannerSlider";
