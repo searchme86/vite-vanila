@@ -1,8 +1,8 @@
-import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";const o=t=>document.querySelector(t);o(".box__cartItem-container");const N=o(".text__count"),b=o(".box__cartItem-container"),g=o(".text__total-price"),$=o(".box__modal-layer"),x=o(".button__close-layer"),V=o(".button__item-cart"),z=o(".list__card-products"),j=document.querySelector(".swiper-wrapper"),D=o(".list__companies");o(".featured-center");const F=o(".box__search-item");o(".box__price-filter .box__input-box input");const G=o(".search-input"),_=t=>{let n=localStorage.getItem(t)==="undefined"?[]:localStorage.getItem(t);const s=JSON.parse(n)||[];if(s!==void 0)return s},v=(t,n)=>{n!==void 0&&localStorage.setItem(t,JSON.stringify(n))};let B=_("store");const M=t=>{const{id:n,title:s,price:a,category:e,thumbnail:i,description:c,discountPercentage:l,rating:d,stock:u,brand:P}=t;return{id:n,title:s,price:a,category:e,thumbnail:i,description:c,discountPercentage:l,rating:d,stock:u,brand:P}},K=t=>{v("store",t.map(M))},h=({id:t,title:n,price:s,thumbnail:a,amount:e})=>{const i=document.createElement("li");return i.classList.add("swiper-slide"),i.setAttribute("data-id",t),i.innerHTML=`
+import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";const o=t=>document.querySelector(t);o(".box__cartItem-container");const N=o(".text__count"),b=o(".box__cartItem-container"),g=o(".text__total-price"),y=o(".box__modal-layer"),x=o(".button__close-layer"),V=o(".button__item-cart"),z=o(".list__card-products"),j=document.querySelector(".swiper-wrapper"),D=o(".list__companies");o(".featured-center");const F=o(".box__search-item");o(".box__price-filter .box__input-box input");const G=o(".search-input"),_=t=>{let s=localStorage.getItem(t)==="undefined"?[]:localStorage.getItem(t);const n=JSON.parse(s)||[];if(n!==void 0)return n},v=(t,s)=>{s!==void 0&&localStorage.setItem(t,JSON.stringify(s))};let B=_("store");const M=t=>{const{id:s,title:n,price:i,category:e,thumbnail:a,description:c,discountPercentage:l,rating:d,stock:u,brand:P}=t;return{id:s,title:n,price:i,category:e,thumbnail:a,description:c,discountPercentage:l,rating:d,stock:u,brand:P}},K=t=>{v("store",t.map(M))},$=({id:t,title:s,price:n,thumbnail:i,amount:e})=>{const a=document.createElement("li");return a.classList.add("swiper-slide"),a.setAttribute("data-id",t),a.innerHTML=`
     <div class="box__item-top">
       <div class="box__cart-image">
         <div class="box__image">
-          <img src="${a}" alt="${n} 이미지" />
+          <img src="${i}" alt="${s} 이미지" />
         </div>
       </div>
       <button type="button" class="button__remove-item" data-id="${t}">
@@ -12,8 +12,8 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
     </div>
     <div class="box__cartItem-content">
       <div class="box__cartItem-info">
-        <strong class="text__cartItem-title">${n}</strong>
-        <span class="text__cartItem-price">$${s}</span>
+        <strong class="text__cartItem-title">${s}</strong>
+        <span class="text__cartItem-price">$${n}</span>
       </div>
       <div class="box__control">
         <button class="button__increase-cartItem" data-id="${t}">
@@ -29,12 +29,12 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         </button>
       </div>
     </div>
-  `,i},Q=({id:t,title:n,thumbnail:s,price:a,description:e,discountPercentage:i,rating:c,stock:l,brand:d})=>`
+  `,a},Q=({id:t,title:s,thumbnail:n,price:i,description:e,discountPercentage:a,rating:c,stock:l,brand:d})=>`
     <li class="list-item__card-products">
       <a href="product.html?id=${t}" class="">
         <div class="box__item-image">
           <div class="box__image">
-            <img src="${s}" alt="${n}" />
+            <img src="${n}" alt="${s}" />
           </div>
         </div>
       </a>
@@ -44,9 +44,9 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
           <p class="text__item-description">${e}</p>
           <div class="box__item-price">
             <span class="text__price-discount">
-              ${i}%
+              ${a}%
             </span>
-            <span class="text__cart-price">$${a}</span>
+            <span class="text__cart-price">$${i}</span>
           </div>
           <div class="box__item-comment">
             <span class="text__item-rating">
@@ -55,7 +55,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
             </span>
             <span class="text__item-stock">재고 ${l}</span>
           </div>
-          <strong class="text__item-name">${n}</strong>
+          <strong class="text__item-name">${s}</strong>
           <div class="box__badge">
             <ul class="list__badge">
               <li>
@@ -73,10 +73,10 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         </button>
       </div>
     </li>
-  `,R=({id:t,brand:n,description:s,title:a,price:e,discountPercentage:i,rating:c,stock:l,amount:d})=>`
-    <strong class="text__item-origin">${n}</strong>
-    <p class="text__item-introduction">${s}</p>
-    <strong class="text__item-title">${a}</strong>
+  `,R=({id:t,brand:s,description:n,title:i,price:e,discountPercentage:a,rating:c,stock:l,amount:d})=>`
+    <strong class="text__item-origin">${s}</strong>
+    <p class="text__item-introduction">${n}</p>
+    <strong class="text__item-title">${i}</strong>
     <div class="box__item-opinion">
       <span class="text__item-rating">
         <i class="fas fa-star"></i>
@@ -84,7 +84,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       </span>
       <div class="box__item-value">
         <span class="text__item-discount">
-          ${i}<span class="text__valaue-unit">%</span>
+          ${a}<span class="text__valaue-unit">%</span>
         </span>
         <strong class="text__cart-price">$${e}</strong>
       </div>
@@ -95,23 +95,23 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
     </div>
     <div class="box__item-store">
       <span class="text__item-home">
-        <i class="fas fa-store"></i>${n}
+        <i class="fas fa-store"></i>${s}
       </span>
       <button type="button" class="button__brand-store">
-        <span>${n}</span><i class="fas fa-chevron-right"></i>
+        <span>${s}</span><i class="fas fa-chevron-right"></i>
       </button>
     </div>
     <button type="button" class="button__add-item" data-id="${t}">
      <i class="fas fa-cart-plus"></i>
       <span class="text__add-cart" data-id="${t}">장바구니</span>
     </button>
-  `,U=({description:t,title:n,images:s})=>`
+  `,U=({description:t,title:s,images:n})=>`
     <section class="box__main-detail">
-      <h3 class="text__section-title">${n}</h3>
+      <h3 class="text__section-title">${s}</h3>
       <p class="text__section-description">${t}</p>
       <div class="box__section-image">
         <div class="box__image">
-          <img src="${s[0]}" alt="${n} 첫번째 이미지"/>
+          <img src="${n[0]}" alt="${s} 첫번째 이미지"/>
         </div>
       </div>
     </section>
@@ -121,7 +121,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         <div class="box__card">
           <div class="box__card-image">
             <div class="box__image">
-              <img src="${s[1]}" alt="${n} 두번째 이미지"/>
+              <img src="${n[1]}" alt="${s} 두번째 이미지"/>
             </div>
           </div>
           <div class="box__card-contents">
@@ -135,7 +135,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         <div class="box__card">
           <div class="box__card-image">
             <div class="box__image">
-              <img src="${s[2]}" alt="${n} 세번째 이미지"/>
+              <img src="${n[2]}" alt="${s} 세번째 이미지"/>
             </div>
           </div>
           <div class="box__card-contents">
@@ -153,7 +153,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <p class="text__section-description">Velit incidunt nobis iste fuga eligendi veritatis ducimus dicta modi</p>
       <div class="box__section-image">
         <div class="box__image">
-          <img src="${s[3]}" alt="${n} 네번째 이미지"/>
+          <img src="${n[3]}" alt="${s} 네번째 이미지"/>
         </div>
       </div>
     </div>
@@ -162,7 +162,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../assets/images/dummyImage01.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage01.png" alt="dummyImage01"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -173,7 +173,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../assets/images/dummyImage02.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage02.png" alt="dummyImage02"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -184,7 +184,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../assets/images/dummyImage03.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage03.png" alt="dummyImage03"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -193,13 +193,13 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         </button>
       </div>
     </div>
-  `,W=({description:t,title:n,images:s})=>`
+  `,W=({description:t,title:s,images:n})=>`
     <section class="box__main-detail">
-      <h3 class="text__section-title">${n}</h3>
+      <h3 class="text__section-title">${s}</h3>
       <p class="text__section-description">${t}</p>
       <div class="box__section-image">
         <div class="box__image">
-          <img src="${s[0]}" alt="${n} 첫번째 이미지"/>
+          <img src="${n[0]}" alt="${s} 첫번째 이미지"/>
         </div>
       </div>
     </section>
@@ -209,7 +209,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         <div class="box__card">
           <div class="box__card-image">
             <div class="box__image">
-              <img src="${s[1]}" alt="${n} 두번째 이미지"/>
+              <img src="${n[1]}" alt="${s} 두번째 이미지"/>
             </div>
           </div>
           <div class="box__card-contents">
@@ -223,7 +223,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         <div class="box__card">
           <div class="box__card-image">
             <div class="box__image">
-              <img src="${s[2]}" alt="${n} 세번째 이미지"/>
+              <img src="${n[2]}" alt="${s} 세번째 이미지"/>
             </div>
           </div>
           <div class="box__card-contents">
@@ -240,7 +240,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/alert.png" alt=""/>
+            <img src="../assets/images/dummyImage01.png" alt=""/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -251,7 +251,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage01.png" alt="dummyImage01"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -262,7 +262,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage02.png" alt="dummyImage02"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -271,13 +271,13 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         </button>
       </div>
     </div>
-  `,X=({description:t,title:n,images:s})=>`
+  `,X=({description:t,title:s,images:n})=>`
     <section class="box__main-detail">
-      <h3 class="text__section-title">${n}</h3>
+      <h3 class="text__section-title">${s}</h3>
       <p class="text__section-description">${t}</p>
       <div class="box__section-image">
         <div class="box__image">
-          <img src="${s[0]}" alt="${n} 첫번째 이미지"/>
+          <img src="${n[0]}" alt="${s} 첫번째 이미지"/>
         </div>
       </div>
     </section>
@@ -286,7 +286,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/alert.png" alt=""/>
+            <img src="../assets/images/dummyImage01.png" alt="dummyImage01"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -297,7 +297,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage02.png" alt="dummyImage02"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -308,7 +308,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage03.png" alt="dummyImage03"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -317,7 +317,7 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         </button>
       </div>
     </div>
-  `,Y=({brand:t,category:n,title:s,description:a,price:e,discountPercentage:i,stock:c,rating:l})=>`
+  `,Y=({brand:t,category:s,title:n,description:i,price:e,discountPercentage:a,stock:c,rating:l})=>`
     <strong class="offscreen">제품 상세 스펙을 정리하는 테이블</strong>
     <table>
       <colgroup>
@@ -331,21 +331,21 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
           <th scope="row" class="table-head">제조회사</th>
           <td>${t}</td>
           <th scope="row" class="table-head">카테고리</th>
-          <td>${n}</td>
+          <td>${s}</td>
         </tr>
         <tr class="table-row">
           <th scope="row" class="table-head">제품명</th>
-          <td colspan="3">${s}</td>
+          <td colspan="3">${n}</td>
         </tr>
         <tr class="table-row">
           <th scope="row" class="table-head">제품설명</th>
-          <td colspan="3">${a}</td>
+          <td colspan="3">${i}</td>
         </tr>
         <tr class="table-row">
           <th scope="row" class="table-head">가격</th>
           <td>${e}</td>
           <th scope="row" class="table-head">할인율</th>
-          <td>${i}%</td>
+          <td>${a}%</td>
         </tr>
         <tr class="table-row">
           <th scope="row" class="table-head">재고수</th>
@@ -355,5 +355,5 @@ import q from"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";cons
         </tr>
       </tbody>
     </table>
-  `;let p,r=(p&&p.destroy(),p=new q(".swiper",{a11y:{prevSlideMessage:"이전 슬라이드",nextSlideMessage:"다음 슬라이드"},pagination:{el:".swiper-pagination"},slidesPerView:3,spaceBetween:15,breakpoints:{360:{slidesPerView:1,spaceBetween:10},760:{slidesPerView:3,spaceBetween:10},861:{slidesPerView:3,spaceBetween:10},1024:{slidesPerView:3,spaceBetween:15}}}),p);const y=()=>_("cart"),w=()=>{const t=y().reduce((n,s)=>n+s.amount,0);N.textContent=t},L=()=>{const t=y().reduce((n,s)=>n+s.price*s.amount,0);g&&(g.textContent=`Total : $${t} `)},S=document.querySelector(".box__modal-layer"),I=()=>{S&&$.classList.add("show"),r.init(document.querySelector(".swiper"))},J=()=>{S&&$.classList.remove("show")};x&&(V.addEventListener("click",I),x.addEventListener("click",J));const O=I;let m;const T=document.querySelector(".swiper-wrapper"),k=()=>{v("cart",m),w(),L()},C=(t,n)=>{let s;return m=_("cart").map(e=>(e.id===Number(t)&&(s=n(e.amount),e={...e,amount:s}),e)),r&&(r.update(),r.updateSlides()),s},E=t=>C(t,n=>n+1),f=t=>{m=_("cart").filter(s=>s.id!==Number(t))},A=()=>{b&&b.addEventListener("click",t=>{const n=t.target,s=n.parentElement,a=n.dataset.id||s.dataset.id,e=s.nextElementSibling,i=s.parentElement.parentElement.parentElement;if(n.classList.contains("button__remove-item"))f(a),s.parentElement.remove();else if(s.classList.contains("button__increase-cartItem"))e.textContent=E(a);else if(s.classList.contains("button__decrease-cartItem")){let c=(l=>{let d=C(Number(l),u=>u-1);return d===0&&f(Number(l)),d})(a);c===0?i.remove():s.previousElementSibling.textContent=c}k(),document.querySelector(".swiper-wrapper").children.length===0&&document.querySelector(".box__modal-layer").classList.remove("show")})},Z=t=>{let n=_("cart");if(n.find(s=>s.id===Number(t))){let s=E(Number(t));b.querySelector(`[data-id="${t}"].text__cartItem-count`).textContent=s}else{let s=(e=>{const i=Number(e);return B.find(c=>c.id===i)})(t);s={...s,amount:1},m=[...n,s],v("cart",m);const a=h(s);T.appendChild(a),r&&(r.updateSlides(),r.update())}k(),r.init(),O()};w(),L(),_("cart").forEach(t=>{const n=h(t);j&&(r.appendSlide(n),r.updateSlides(),r.update())}),A();const tt=async()=>{try{const t=await fetch("https://dummyjson.com/products"),{products:n}=await t.json();return n}catch{return null}},nt=async t=>{const n=`https://dummyjson.com/products/${t}`;try{return await(await fetch(n)).json()}catch{return null}};export{U as a,W as b,R as c,X as d,Y as e,nt as f,Z as g,Q as h,F as i,D as j,tt as k,K as l,G as n,z as p,B as s};
-//# sourceMappingURL=fetchProducts-tg9FguSS.js.map
+  `;let p,r=(p&&p.destroy(),p=new q(".swiper",{a11y:{prevSlideMessage:"이전 슬라이드",nextSlideMessage:"다음 슬라이드"},pagination:{el:".swiper-pagination"},slidesPerView:3,spaceBetween:15,breakpoints:{360:{slidesPerView:1,spaceBetween:10},760:{slidesPerView:3,spaceBetween:10},861:{slidesPerView:3,spaceBetween:10},1024:{slidesPerView:3,spaceBetween:15}}}),p);const h=()=>_("cart"),w=()=>{const t=h().reduce((s,n)=>s+n.amount,0);N.textContent=t},I=()=>{const t=h().reduce((s,n)=>s+n.price*n.amount,0);g&&(g.textContent=`Total : $${t} `)},L=document.querySelector(".box__modal-layer"),S=()=>{L&&y.classList.add("show"),r.init(document.querySelector(".swiper"))},J=()=>{L&&y.classList.remove("show")};x&&(V.addEventListener("click",S),x.addEventListener("click",J));const O=S;let m;const T=document.querySelector(".swiper-wrapper"),k=()=>{v("cart",m),w(),I()},C=(t,s)=>{let n;return m=_("cart").map(e=>(e.id===Number(t)&&(n=s(e.amount),e={...e,amount:n}),e)),r&&(r.update(),r.updateSlides()),n},E=t=>C(t,s=>s+1),f=t=>{m=_("cart").filter(n=>n.id!==Number(t))},A=()=>{b&&b.addEventListener("click",t=>{const s=t.target,n=s.parentElement,i=s.dataset.id||n.dataset.id,e=n.nextElementSibling,a=n.parentElement.parentElement.parentElement;if(s.classList.contains("button__remove-item"))f(i),n.parentElement.remove();else if(n.classList.contains("button__increase-cartItem"))e.textContent=E(i);else if(n.classList.contains("button__decrease-cartItem")){let c=(l=>{let d=C(Number(l),u=>u-1);return d===0&&f(Number(l)),d})(i);c===0?a.remove():n.previousElementSibling.textContent=c}k(),document.querySelector(".swiper-wrapper").children.length===0&&document.querySelector(".box__modal-layer").classList.remove("show")})},Z=t=>{let s=_("cart");if(s.find(n=>n.id===Number(t))){let n=E(Number(t));b.querySelector(`[data-id="${t}"].text__cartItem-count`).textContent=n}else{let n=(e=>{const a=Number(e);return B.find(c=>c.id===a)})(t);n={...n,amount:1},m=[...s,n],v("cart",m);const i=$(n);T.appendChild(i),r&&(r.updateSlides(),r.update())}k(),r.init(),O()};w(),I(),_("cart").forEach(t=>{const s=$(t);j&&(r.appendSlide(s),r.updateSlides(),r.update())}),A();const tt=async()=>{try{const t=await fetch("https://dummyjson.com/products"),{products:s}=await t.json();return s}catch{return null}},st=async t=>{const s=`https://dummyjson.com/products/${t}`;try{return await(await fetch(s)).json()}catch{return null}};export{U as a,W as b,R as c,X as d,Y as e,st as f,Z as g,Q as h,F as i,D as j,tt as k,K as l,G as n,z as p,B as s};
+//# sourceMappingURL=fetchProducts-IHaTeb7E.js.map
