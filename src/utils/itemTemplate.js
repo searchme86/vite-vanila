@@ -381,7 +381,7 @@ export const createInfoDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../assets/images/dummyImage01.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage01.png" alt="dummyImage01"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -392,7 +392,7 @@ export const createInfoDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../assets/images/dummyImage02.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage02.png" alt="dummyImage02"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -403,7 +403,7 @@ export const createInfoDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../assets/images/dummyImage03.png" alt="lego batman"/>
+            <img src="../assets/images/dummyImage03.png" alt="dummyImage03"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -470,7 +470,7 @@ export const createInfoTDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/alert.png" alt=""/>
+            <img src="../assets/images/dummyImage01.png" alt=""/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -481,7 +481,7 @@ export const createInfoTDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage01.png" alt="dummyImage01"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -492,7 +492,7 @@ export const createInfoTDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage02.png" alt="dummyImage02"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -526,7 +526,7 @@ export const createInfoSingleDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/alert.png" alt=""/>
+            <img src="../assets/images/dummyImage01.png" alt="dummyImage01"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -537,7 +537,7 @@ export const createInfoSingleDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage02.png" alt="dummyImage02"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>
@@ -548,7 +548,7 @@ export const createInfoSingleDescription = ({description, title, images}) => {
       <div class="box__item-notice">
         <div class="box__notice-image">
           <div class="box__image">
-            <img src="../../assets/images/cart/management.png" alt=""/>
+            <img src="../assets/images/dummyImage03.png" alt="dummyImage03"/>
           </div>
         </div>
         <p class="text__notice-contents">Lorem ipsum <br/>elit. Corrupti error</p>

@@ -356,18 +356,14 @@
     .text__modal-title {
       font-size: 20px;
       margin-bottom: 15px;
-      padding-left: 15px;
     }
     .box__modal-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: block;
       height: 300px;
 
       .box__preview-cart {
         display: flex;
         justify-content: space-between;
-        padding: 0 10px;
         .link__cart {
           display: block;
           font-size: 18px;
@@ -434,7 +430,6 @@
                 box-sizing: border-box;
 
                 .box__cartItem-info {
-                  max-width: 134px;
                   .text__cartItem-title {
                     display: inline-block;
                     word-break: break-all;
@@ -486,6 +481,23 @@
       -ms-transform: translate(-50%, 0);
       -o-transform: translate(-50%, 0);
     }
+  }
+}
+
+.box__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: hsla(0, 0%, 0%, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: 0.5s ease;
+  &.active {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 

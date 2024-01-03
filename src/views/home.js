@@ -5,8 +5,8 @@ import "../assets/style/media/headerMedia.scss";
 import "../assets/style/media/homeMedia.scss";
 import "../assets/style/media/footerMedia.scss";
 
-import "../components/bannerSlider";
-import "../components/MainSlider";
 import "../components/homeSearch";
 import "../components/homeAccordion";
 import "../components/homeSideBar";
+import "../components/bannerSlider";
+import "../components/MainSlider";

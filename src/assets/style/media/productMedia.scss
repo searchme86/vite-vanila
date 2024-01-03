@@ -151,13 +151,15 @@
           .list__dot {
             display: flex;
             .list-item__dot {
-              width: calc((100% - 40px) / 5);
               height: 50px;
               &:not(:last-child) {
                 margin: 0 10px 0 0;
               }
               .button__preview-image {
                 padding: 0;
+                .box__image {
+                  height: 50px;
+                }
               }
             }
           }
@@ -209,6 +211,13 @@
             font-size: 24px;
           }
           .box__item-opinion {
+            .text__item-rating {
+              .fa-star {
+                position: relative;
+                top: -3px;
+              }
+            }
+
             .box__item-value {
               .text__item-discount {
                 margin-bottom: 8px;
@@ -245,6 +254,10 @@
               table {
                 td {
                   padding: 8px 5px;
+                  font-size: 13px;
+                }
+                .table-head {
+                  font-size: 13px;
                 }
               }
             }
@@ -257,6 +270,9 @@
             }
             .box__info-description {
               .box__main-detail {
+                .text__section-title {
+                  font-size: 36px;
+                }
                 .box__section-image {
                   width: 100%;
                   height: auto;
@@ -281,7 +297,7 @@
                   width: 100%;
                   margin-right: 0;
                   &:not(:last-child) {
-                    margin-bottom: 15px;
+                    margin-bottom: 40px;
                   }
                 }
               }
@@ -292,6 +308,7 @@
       .box__info-description {
         .box__section-image {
           width: 100%;
+          height: 407px;
         }
       }
     }

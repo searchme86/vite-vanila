@@ -7,10 +7,11 @@ import "../assets/style/media/footerMedia.scss";
 
 import "../components/homeSideBar";
 import "../components/homeSearch";
+import "../components/homeAccordion";
+import "../components/bannerSlider";
 
 import "../components/cart/toggleCart";
 import "../components/cart/updateCart";
-import "../components/bannerSlider";
 import "../components/youTube";
 
 import {addToCart} from "../components/cart/updateCart";

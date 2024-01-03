@@ -7,7 +7,11 @@ import "../assets/style/media/footerMedia.scss";
 
 import "../components/cart/toggleCart";
 import "../components/cart/updateCart";
+
 import "../components/bannerSlider";
+import "../components/homeSearch";
+import "../components/homeAccordion";
+import "../components/homeSideBar";
 
 import {productContainer} from "../utils/cartElemDom";
 import {fetchProducts} from "../api/fetchProducts";
