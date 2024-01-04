@@ -12,8 +12,16 @@
   };
 
   const resetButtonsAndMenus = (buttons, menus) => {
-    buttons.forEach((button) => button.classList.remove("active"));
-    menus.forEach((menu) => menu.classList.remove("active"));
+    buttons.forEach((button) => {
+      button.removeAttribute("aria-selected", "true");
+      button.setAttribute("aria-selected", "false");
+      button.classList.remove("active");
+    });
+    menus.forEach((menu) => {
+      menu.removeAttribute("aria-expanded", "true");
+      menu.setAttribute("aria-expanded", "false");
+      menu.classList.remove("active");
+    });
   };
 
   const buttonClickHandler = function () {
@@ -24,7 +32,9 @@
 
     if (!isClicked) {
       this.nextElementSibling.classList.add("active");
+      this.nextElementSibling.setAttribute("aria-expanded", "true");
       this.classList.add("active");
+      this.setAttribute("aria-selected", "true");
     }
   };
 

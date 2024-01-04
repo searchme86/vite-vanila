@@ -86,6 +86,10 @@ const processCart = () => {
         let amountLeftDecreased = decreaseAmount(clickItemID);
         if (amountLeftDecreased === 0) {
           cartContents.remove();
+          if (slider) {
+            slider.updateSlides();
+            slider.update();
+          }
         } else {
           targetParent.previousElementSibling.textContent = amountLeftDecreased;
         }

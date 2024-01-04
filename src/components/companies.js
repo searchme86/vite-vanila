@@ -21,7 +21,7 @@ const renderCompanyButtons = (categories) => {
   const createCompanyList = (category) => {
     return /*html*/ `
       <li role="presentation" class="list-item__company">
-        <button type="button" class="button__item-company">${category}</button>
+        <button type="button" class="button__item-company" aria-pressed="false" tabindex="-1">${category}</button>
       </li>
     `;
   };
@@ -30,16 +30,18 @@ const renderCompanyButtons = (categories) => {
 
 const handleCompanyButtonClick = (event, store) => {
   const element = event.target;
-
   const items = document.querySelectorAll(".list-item__company");
 
   items.forEach((item) => {
+    const menuButton = item.children[0];
+    menuButton.setAttribute("aria-pressed", "false");
+    menuButton.setAttribute("tabindex", "-1");
     item.classList.remove("active");
-    item.removeAttribute("aria-pressed", false);
   });
 
   element.parentElement.classList.add("active");
-  element.parentElement.setAttribute("aria-pressed", true);
+  element.setAttribute("aria-pressed", "true");
+  element.setAttribute("tabindex", "0");
 
   if (element.classList.contains("button__item-company")) {
     addItemsToContainer(

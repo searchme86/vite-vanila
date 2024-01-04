@@ -465,6 +465,9 @@
                   }
                 }
               }
+              &:focus {
+                border: 2px solid #007bff;
+              }
             }
           }
         }

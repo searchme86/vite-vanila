@@ -16,6 +16,10 @@ const modalLayer = document.querySelector(".box__modal-layer");
 const showCartOverlay = () => {
   if (modalLayer) {
     cartOverlay.classList.add("show");
+    cartOverlay.removeAttribute("aria-modal", "false");
+    cartOverlay.removeAttribute("tabindex");
+    cartOverlay.setAttribute("aria-modal", "true");
+    cartOverlay.setAttribute("tabindex", "0");
   }
   slider.init(document.querySelector(".swiper"));
 };
@@ -24,6 +28,10 @@ const showCartOverlay = () => {
 const hideCartOverlay = () => {
   if (modalLayer) {
     cartOverlay.classList.remove("show");
+    cartOverlay.removeAttribute("aria-modal", "true");
+    cartOverlay.removeAttribute("tabindex");
+    cartOverlay.setAttribute("aria-modal", "false");
+    cartOverlay.setAttribute("tabindex", "-1");
   }
 };
 

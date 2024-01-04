@@ -12,11 +12,19 @@
   const showMobileMenu = () => {
     mobileSideBarMenu.classList.add("active");
     mobileOverlay.classList.add("active");
+    mobileOverlay.removeAttribute("aria-modal", "false");
+    mobileOverlay.removeAttribute("tabindex");
+    mobileOverlay.setAttribute("aria-modal", "true");
+    mobileOverlay.setAttribute("tabindex", "0");
   };
 
   const hideMobileMenu = () => {
     mobileSideBarMenu.classList.remove("active");
     mobileOverlay.classList.remove("active");
+    mobileOverlay.removeAttribute("aria-modal", "true");
+    mobileOverlay.removeAttribute("tabindex");
+    mobileOverlay.setAttribute("aria-modal", "false");
+    mobileOverlay.setAttribute("tabindex", "-1");
   };
 
   buttonMobileMenu.addEventListener("click", showMobileMenu);
