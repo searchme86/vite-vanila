@@ -80,6 +80,10 @@ const processCart = () => {
       if (target.classList.contains("button__remove-item")) {
         removeItem(clickItemID);
         targetParent.parentElement.remove();
+        if (slider) {
+          slider.updateSlides();
+          slider.update();
+        }
       } else if (targetParent.classList.contains("button__increase-cartItem")) {
         ItemCount.textContent = increaseAmount(clickItemID);
       } else if (targetParent.classList.contains("button__decrease-cartItem")) {
