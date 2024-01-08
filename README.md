@@ -27,18 +27,27 @@
 ## 1. 프로젝트 개요
 
 - 포트폴리오명: vite-vanila
+- 포트폴리오 컨셉
+
+  - vanilaJs를 통해 DOM을 조작하고 생성
+  - fetch()통해 dummy data를 view로 렌더링
+  - @media을 통해 다양한 뷰포트의 반응형 화면 구현
+  - 컴포넌트 구현(슬라이더, 아코디언, 스크롤 애니메이션)
+  - localStorage를 통해 데이터 전역으로 관리
+
 - 웹 링크 : [https://searchme86.github.io/vite-vanila/index.html](https://searchme86.github.io/vite-vanila/index.html)
 - 작업 기간: 2개월 (10/30,2023 ~ 12/31,2023)
-- 작업 기여도 : 100%(본인)
+- 작업 기여도 : 100%
 - 언어: HTML, SCSS, VanilaJs
-- 사용한 라이브러리 : Swiper
+- 사용 라이브러리 : [Swiper](https://swiperjs.com/)
 - 번들러/배포 : Vite / github pages
 - 웹접근성 속성 추가
   - 숨김 텍스트(클래스 .offscreen)
   - skipNavigation
   - aria 속성(aria-xxxx)
   - tabindex
-- 반응형 : 모바일/데스크탑 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 /1170)
+- 반응형 : 모바일/데스크탑 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 / 1170)
+  - 카트(cart.html) 페이지는 반응형 적용하지 못함
 
 ## 2. 포트폴리오의 목적 및 의의
 
@@ -461,12 +470,13 @@ const hideCartOverlay = () => {
 - 카멜케이스
 - 의미에 맞게 폴더 위치 및 depth 재조정
 - 현재 fetch로 가져오는 코드를 Axios (Interceptor)로 변경
-- CSS
-- 공통의미별로 mixin 정의 후 파일 분할
-- 반응형(@media) 코드 일원화
+- CSS 모듈로 관리
+  - 공통의미별로 mixin 정의 후 파일 분할
+  - 반응형(@media) 코드 일원화
 - 번들러, vite를 webpack으로 변경
 - 슬라이더(swiper를 제외한)에 터치(touch)로, 구동되도록 기능 수정
 - 상품 등록 페이지 구현
+  - 현재는 dummy 데이터를 fetch해서 보여주는 기능만 존재함
 
 페이지 별
 
@@ -485,21 +495,23 @@ const hideCartOverlay = () => {
 
 - 홈(index.html)
 
-- 카테고리 아코디언
-- 웹접근성, aria-expanded, aria-pressed 속성 추가(스크립트 기능)
+  - 카테고리 아코디언
+
+    - 웹접근성, aria-expanded, aria-pressed 속성 추가(스크립트 기능)
 
 - 블로그(blog.html)
 
-- 스크롤을 빠르게 할 경우, 새로 생성/삭제되는 텍스트 블록이 보여지고 숨겨지는 속도가 달라짐
+  - 스크롤을 빠르게 할 경우, 새로 생성/삭제되는 텍스트 블록이 보여지고 숨겨지는 속도가 달라짐
 
 - 상품 페이지 (products.html)
 
-- 카트상품 미리보기 슬라이더(Swiper)
-- 삭제 아이콘 클릭해도, localStorage에 숫자 초기화 되지 않음
+  - 카트상품 미리보기 슬라이더(Swiper)
+
+  - 삭제 아이콘 클릭해도, localStorage에 숫자 초기화 되지 않음
 
 - 상품상세 페이지(product.html)
 
-- 상품 미리보기 슬라이더()
+- 상품 미리보기 슬라이더
   - 슬라이더
     – touch로 다음 슬라이드 이동하도록 변경
   - 웹접근성 기능 추가
