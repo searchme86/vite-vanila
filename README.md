@@ -1,4 +1,4 @@
-## 1. 프로젝트 미리보기
+## 프로젝트 미리보기
 
 #### desktop 버전
 
@@ -27,17 +27,17 @@
 ## 1. 프로젝트 개요
 
 - 포트폴리오명: vite-vanila
-- 웹 주소 : [https://searchme86.github.io/vite-vanila/index.html](https://searchme86.github.io/vite-vanila/index.html)
+- 웹 링크 : [https://searchme86.github.io/vite-vanila/index.html](https://searchme86.github.io/vite-vanila/index.html)
 - 작업 기간: 2개월 (10/30,2023 ~ 12/31,2023)
 - 작업 기여도 : 100%(본인)
 - 언어: HTML, SCSS, VanilaJs
 - 사용한 라이브러리 : Swiper
 - 번들러/배포 : Vite / github pages
 - 웹접근성 속성 추가
-  – 숨김 텍스트(클래스 .offscreen)
-  – skipNavigation
-  – aria-xxxx
-  – tabindex
+  - 숨김 텍스트(클래스 .offscreen)
+  - skipNavigation
+  - aria 속성(aria-xxxx)
+  - tabindex
 - 반응형 : 모바일/데스크탑 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 /1170)
 
 ## 2. 포트폴리오의 목적 및 의의
@@ -98,8 +98,37 @@
 #### 4-2. 상품 삭제 후, 해당 아이템을 갖는 swiper slide와 sync 이슈
 
 - 상품 삭제(.remove()) 후, swiper slide를 update하지 않아서 빈 화면이 출력됐음
-- 예시 이미지 (에러*products*상품변경\_swiper와sync이슈.png)
-- 예시 코드(vscode 추가)
+
+  - <img width="361" alt="에러_products_상품변경_swiper와sync이슈" src="https://github.com/searchme86/vite-vanila/assets/47154709/6ba13970-0a15-424a-9a4e-bb0fb9c2f0a6">
+  - 상품을 삭제(.remove())한 이후, swiper slide를 update 하지 않아 발생한 이슈
+
+    - remove 후에 swiper를 update 해야함
+
+      ```javascript
+      targetParent.parentElement.remove();
+      if (slider) {
+        slider.updateSlides();
+        slider.update();
+      }
+
+      cartContents.remove();
+      if (slider) {
+        slider.updateSlides();
+        slider.update();
+      }
+      ```
+
+  - 상품 추가(add)후, 매번 swiper를 초기화 및 업데이트 하지 않아 모달을 재시작하여 변경사항을 적용해야함
+
+    - swiper slide를 추가(append)이후에 update를 해야함
+
+      ```javascript
+      if (swiperList) {
+        slider.appendSlide(cartItemElement);
+        slider.updateSlides();
+        slider.update();
+      }
+      ```
 
 ## 5. 웹접근성
 
@@ -207,49 +236,84 @@
 #### 5-5. 모달(Modal)
 
 - [![웹접근성_모달](https://img.youtube.com/vi/PMXcgVUNjDg/0.jpg)](https://www.youtube.com/watch?v=PMXcgVUNjDg)
+
   - role=“dialog”
   - aria-modal=“true/false”
   - tabindex=“-1/0”
   - arai-labelledby=“”
 
+  ```javascript
+  const showCartOverlay = () => {
+    if (modalLayer) {
+      cartOverlay.classList.add("show");
+      cartOverlay.removeAttribute("aria-modal", "false");
+      cartOverlay.removeAttribute("tabindex");
+      cartOverlay.setAttribute("aria-modal", "true");
+      cartOverlay.setAttribute("tabindex", "0");
+    }
+    slider.init(document.querySelector(".swiper"));
+  };
+
+  const hideCartOverlay = () => {
+    if (modalLayer) {
+      cartOverlay.classList.remove("show");
+      cartOverlay.removeAttribute("aria-modal", "true");
+      cartOverlay.removeAttribute("tabindex");
+      cartOverlay.setAttribute("aria-modal", "false");
+      cartOverlay.setAttribute("tabindex", "-1");
+    }
+  };
+  ```
+
 #### 5-6. 탭(Tab)
 
 - [![웹접근성_탭(Tab)](https://img.youtube.com/vi/aAngDnSvlU8/0.jpg)](https://www.youtube.com/watch?v=aAngDnSvlU8)
-  - role=“tablist”
-  - role=“tab”
-  - role=“tabpanel”
-  - aria-selected=“true/false”
-  - tabindex=“-1/0”
-  - aria-controls="tabpanel1"
-  - aria-hidden=“true/false”
+- role=“tablist”
+- role=“tab”
+- role=“tabpanel”
+- aria-selected=“true/false”
+- tabindex=“-1/0”
+- aria-controls="tabpanel1"
+- aria-hidden=“true/false”
 
 ## 6. 반응형
 
 - [![반응형 과정](https://img.youtube.com/vi/Gfj7H5YWOaQ/0.jpg)](https://www.youtube.com/watch?v=Gfj7H5YWOaQ)
-  - 종단점
-    - 360 / 760 / 861 / 1170
-    - 카트(cart.html) 페이지는 모바일 반응형 적용하지 못함
+
+- 종단점
+
+  - 360 / 760 / 861 / 1170
+
+    - <img width="360" alt="반응형_360" src="https://github.com/searchme86/vite-vanila/assets/47154709/999586d2-57b1-452f-8b14-031e27b486f0">
+
+    - <img width="570" alt="반응형_760" src="https://github.com/searchme86/vite-vanila/assets/47154709/0bfcc649-c50e-43e0-b981-649b4205d928">
+
+    - <img width="603" alt="반응형_861" src="https://github.com/searchme86/vite-vanila/assets/47154709/53abb23e-52df-4abb-8226-0e46419015e3">
+
+    - <img width="1177" alt="반응형_1170" src="https://github.com/searchme86/vite-vanila/assets/47154709/a9ef317a-f3e3-49a9-9e0f-fd68068ce7e1">
+
+  - 카트(cart.html) 페이지는 모바일 반응형 적용하지 못함
 
 ## 7. 페이지 미리보기
 
 #### 7-1. 블로그 페이지(blog.html)
 
 - mobile
-  - [![blog_mobile](https://img.youtube.com/vi/Lgb7zKQjCcc/0.jpg)](https://youtube.com/shorts/Lgb7zKQjCcc)
+- [![blog_mobile](https://img.youtube.com/vi/Lgb7zKQjCcc/0.jpg)](https://youtube.com/shorts/Lgb7zKQjCcc)
 - desktop
-  - [![blog_desktop](https://img.youtube.com/vi/rRgyb1avNYQ/0.jpg)](https://www.youtube.com/watch?v=rRgyb1avNYQ)
+- [![blog_desktop](https://img.youtube.com/vi/rRgyb1avNYQ/0.jpg)](https://www.youtube.com/watch?v=rRgyb1avNYQ)
 
 #### 7-2. 상품 상세 페이지(product.html)
 
 - mobile
-  - [![product_mobile](https://img.youtube.com/vi/Fn6ADSWOyH0/0.jpg)](https://youtube.com/shorts/Fn6ADSWOyH0)
+- [![product_mobile](https://img.youtube.com/vi/Fn6ADSWOyH0/0.jpg)](https://youtube.com/shorts/Fn6ADSWOyH0)
 - desktop
-  - [![product_desktop](https://img.youtube.com/vi/ZmAUiGrP-mw/0.jpg)](https://youtu.be/ZmAUiGrP-mw)
+- [![product_desktop](https://img.youtube.com/vi/ZmAUiGrP-mw/0.jpg)](https://youtu.be/ZmAUiGrP-mw)
 
 #### 7-3. 상품 페이지(products.html)
 
 - mobile
-  - [![products_mobile](https://img.youtube.com/vi/L2knciHepas/0.jpg)](https://youtu.be/L2knciHepas)
+- [![products_mobile](https://img.youtube.com/vi/L2knciHepas/0.jpg)](https://youtu.be/L2knciHepas)
 
 ## 8. 프로젝트 컴포넌트(기능,script) 소개
 
@@ -275,60 +339,60 @@
 
 - 카트
 
-  - updateCart.js
-    - 상품등록
-    - 상품수량 변경(swiper 기능과 연결됨)
-  - toggleCart.js
-    - 상품 미리보기 모달 생성/삭제(swiper 기능과 연결됨)
-  - renderCart.js
+- updateCart.js
+  - 상품등록
+  - 상품수량 변경(swiper 기능과 연결됨)
+- toggleCart.js
+  - 상품 미리보기 모달 생성/삭제(swiper 기능과 연결됨)
+- renderCart.js
 
-    - 카트 아이콘에 로컬 스토리지에 저장된 아이템 수를 보여줌
-    - 카트 아이템의 숫자를 계산하고 변경
-    - 카트 아이템을 상품 미리보기 모달에 추가(swiper 기능과 연결됨)
+  - 카트 아이콘에 로컬 스토리지에 저장된 아이템 수를 보여줌
+  - 카트 아이템의 숫자를 계산하고 변경
+  - 카트 아이템을 상품 미리보기 모달에 추가(swiper 기능과 연결됨)
 
 - swiper.js
 
-  - swiper를 초기화 하고 생성
-  - swiper의 속성을 정의
+- swiper를 초기화 하고 생성
+- swiper의 속성을 정의
 
 - companies.js
 
-  - 등록된 상품에 관련된 제조회사를 filter 해서 메뉴를 생성
+- 등록된 상품에 관련된 제조회사를 filter 해서 메뉴를 생성
 
 - search.js
 
-  - 대소문자 구분없이 상품 검색기능
+- 대소문자 구분없이 상품 검색기능
 
 - cartElemDom.js
 
-  - 페이지(products.html)에 사용되는 DOM을 모두 정의
+- 페이지(products.html)에 사용되는 DOM을 모두 정의
 
 - render.js
-  - fetch로 가져온 상품 데이터를 상품 레이아웃에 넣어주는 기능
+- fetch로 가져온 상품 데이터를 상품 레이아웃에 넣어주는 기능
 
 #### 8-4. 상품상세(product.html / product.js)
 
 - youTube.js
 
-  - 유튜브 실행
+- 유튜브 실행
 
 - sliderComponent.js / sliderData.js(상품 미리보기 슬라이더)
 
-  - 슬라이더 (sliderComponent.js)
-  - 슬라이더 아이템 템플릿 및 데이터 (sliderData.js)
+- 슬라이더 (sliderComponent.js)
+- 슬라이더 아이템 템플릿 및 데이터 (sliderData.js)
 
 - zoomIn.js
 
-  - 상품 확대 돋보기 기능
+- 상품 확대 돋보기 기능
 
 - productTab.js
-  - 탭(Tab)
+- 탭(Tab)
 
 #### 8-5 그외(유틸)
 
 - itemTemplate.js
 
-  - fetch로 가져온 데이터를 js로 받아, html로 렌더링해주는 재활용 가능한 템플릿 모음
+- fetch로 가져온 데이터를 js로 받아, html로 렌더링해주는 재활용 가능한 템플릿 모음
 
 ## 9. 아쉬운점
 
@@ -336,58 +400,58 @@
 - 반응형(@media) 코드를 분산하여 작성하여, 이후 코드가 서로 꼬이는 상황이 발생함
 - 선 기획/계획 후 작업이 아닌, 필요한 기능을 계속 추가하는 방향으로 작업하여 기능의 일관성을 유지하지 못함
 
-  - 카트 아이템의 숫자가 products.html에서만 작동함
-  - 상품 미리보기 슬라이더
-    – aria-xxx 속성을 이후 추가하여, 코드 전체를 모두 변경해야하는 이슈 발생
+- 카트 아이템의 숫자가 products.html에서만 작동함
+- 상품 미리보기 슬라이더
+  – aria-xxx 속성을 이후 추가하여, 코드 전체를 모두 변경해야하는 이슈 발생
 
 - 폴더 구조
-  - 퍼블리싱 폴더구조와 리액트 폴더구조를 혼재해 사용하여, 페이지 관련 폴더가 중복으로 사용됨
-  - 리액트로 작성할 경우, js로 html을 렌더링 할 수 있어, pages폴더와 views 폴더를 합쳐 사용할 수 있을 것으로 기대
-    - pages와 views 폴더
-      - pages 폴더
-        - 각 페이지의 html 파일을 포함
-      - views 폴더
-        – 각 페이지가 사용하는 모든 스크립트를 import해 사용하는 js 스크립트 파일을 포함
+- 퍼블리싱 폴더구조와 리액트 폴더구조를 혼재해 사용하여, 페이지 관련 폴더가 중복으로 사용됨
+- 리액트로 작성할 경우, js로 html을 렌더링 할 수 있어, pages폴더와 views 폴더를 합쳐 사용할 수 있을 것으로 기대
+  - pages와 views 폴더
+    - pages 폴더
+      - 각 페이지의 html 파일을 포함
+    - views 폴더
+      – 각 페이지가 사용하는 모든 스크립트를 import해 사용하는 js 스크립트 파일을 포함
 - SASS의 MIXIN 기능을 사용하지 않고, 공통된 스타일을 중복하여 사용함
-  - 어떤 기능을 공통으로 정의해야 할 지 몰라, mixin 을 사용하지 않기로 결정
-  - 중복된 코드를 여기저기 사용
-    - 카드 미리보기 슬라이더
-      - 상품 삭제 코드와 swiper slide의 변경사항을 적용 sync하는 코드를 중복하여 작성
-        – 예시 코드 작성함, 여기에
+- 어떤 기능을 공통으로 정의해야 할 지 몰라, mixin 을 사용하지 않기로 결정
+- 중복된 코드를 여기저기 사용
+  - 카드 미리보기 슬라이더
+    - 상품 삭제 코드와 swiper slide의 변경사항을 적용 sync하는 코드를 중복하여 작성
+      – 예시 코드 작성함, 여기에
 
 ## 10. 애로사항이 많았던 작업
 
 - prodcuts.html
 
-  - 카트 미리보기 슬라이더
-  - 상품 삭제에 따른 Swiper slide 변경 사항 Sync 이슈
-  - 상품 갯수 차감 버튼 및 삭제 아이콘 클릭으로 상품 삭제 할 경우, 상품은 삭제 되지만 Swiper slide는 그대로 유지
-  - 상품 삭제하는 코드와 Swiper도 변경되도록 코드 추가하여 해결
+- 카트 미리보기 슬라이더
+- 상품 삭제에 따른 Swiper slide 변경 사항 Sync 이슈
+- 상품 갯수 차감 버튼 및 삭제 아이콘 클릭으로 상품 삭제 할 경우, 상품은 삭제 되지만 Swiper slide는 그대로 유지
+- 상품 삭제하는 코드와 Swiper도 변경되도록 코드 추가하여 해결
 
 - product.html
 
-  - script로 렌더링 하는 HTML DOM에서 이미지의 src 링크가 배포 페이지에서 깨지는 이슈
-    – 해결못함
+- script로 렌더링 하는 HTML DOM에서 이미지의 src 링크가 배포 페이지에서 깨지는 이슈
+  – 해결못함
 
 - blog.html
-  - 스크롤 값을 구하기 위한, 엘리먼트 요소 값을 구하기
+- 스크롤 값을 구하기 위한, 엘리먼트 요소 값을 구하기
 
 ## 11. 버그 & 보완사항 & 향후계획
 
 전체
 
 - 리액트와 타입스크립트로 코드 마이그레이션
-  - 뷰 관련 폴더(pages폴더와 views 폴더)를 일원화
-    - 모든 HTML페이지에 작성된 헤더(header)와 푸터(footer)를 재활용하여 사용
-  - 컴파일 시점에 코드 에러를 미리 파악하여, 탄탄한 코드를 작성할 수 있음
-    - .(점연산자)으로 값을 호출하는 코드가 undefined/null 가 될 수 있는 문제를 미리 방지
+- 뷰 관련 폴더(pages폴더와 views 폴더)를 일원화
+  - 모든 HTML페이지에 작성된 헤더(header)와 푸터(footer)를 재활용하여 사용
+- 컴파일 시점에 코드 에러를 미리 파악하여, 탄탄한 코드를 작성할 수 있음
+  - .(점연산자)으로 값을 호출하는 코드가 undefined/null 가 될 수 있는 문제를 미리 방지
 - 파일명과 폴더구조를 변경
-  - 카멜케이스
-  - 의미에 맞게 폴더 위치 및 depth 재조정
+- 카멜케이스
+- 의미에 맞게 폴더 위치 및 depth 재조정
 - 현재 fetch로 가져오는 코드를 Axios (Interceptor)로 변경
 - CSS
-  - 공통의미별로 mixin 정의 후 파일 분할
-  - 반응형(@media) 코드 일원화
+- 공통의미별로 mixin 정의 후 파일 분할
+- 반응형(@media) 코드 일원화
 - 번들러, vite를 webpack으로 변경
 - 슬라이더(swiper를 제외한)에 터치(touch)로, 구동되도록 기능 수정
 - 상품 등록 페이지 구현
@@ -396,54 +460,59 @@
 
 - 헤더(header)
 
-  - 상품 찾기 기능
-    - 아이콘 돋보기 버튼 클릭 시, input과 input placeholder가 보이도록 변경
-      - 배포된 경우만, input placeholder가 보이지 않음
-    - input에 텍스트 입력시, 해당 검색 결과 페이지 추가
-    - 아이콘 돋보기 버튼 클릭 후, fixed&hidden 엘리먼트가 생성될때, 페이지에서 그림자가 생기는 이슈 해결
-  - UNTITLED 메뉴, 새로운 페이지 추가
+- 상품 찾기 기능
+  - 아이콘 돋보기 버튼 클릭 시, input과 input placeholder가 보이도록 변경
+    - 배포된 경우만, input placeholder가 보이지 않음
+  - input에 텍스트 입력시, 해당 검색 결과 페이지 추가
+  - 아이콘 돋보기 버튼 클릭 후, fixed&hidden 엘리먼트가 생성될때, 페이지에서 그림자가 생기는 이슈 해결
+- UNTITLED 메뉴, 새로운 페이지 추가
 
-  - 텍스트 슬라이더(bannerSlider.js)
+- 텍스트 슬라이더(bannerSlider.js)
 
-    - 텍스트를 감싸는 링크를 추가하여, 클릭한 텍스트 아이템 페이지로 이동하도록 기능 추가
+  - 텍스트를 감싸는 링크를 추가하여, 클릭한 텍스트 아이템 페이지로 이동하도록 기능 추가
 
 - 홈(index.html)
 
-  - 카테고리 아코디언
-  - 웹접근성, aria-expanded, aria-pressed 속성 추가(스크립트 기능)
+- 카테고리 아코디언
+- 웹접근성, aria-expanded, aria-pressed 속성 추가(스크립트 기능)
 
 - 블로그(blog.html)
 
-  - 스크롤을 빠르게 할 경우, 새로 생성/삭제되는 텍스트 블록이 보여지고 숨겨지는 속도가 달라짐
+- 스크롤을 빠르게 할 경우, 새로 생성/삭제되는 텍스트 블록이 보여지고 숨겨지는 속도가 달라짐
 
 - 상품 페이지 (products.html)
 
-  - 카트상품 미리보기 슬라이더(Swiper)
-  - 삭제 아이콘 클릭해도, localStorage에 숫자 초기화 되지 않음
+- 카트상품 미리보기 슬라이더(Swiper)
+- 삭제 아이콘 클릭해도, localStorage에 숫자 초기화 되지 않음
 
 - 상품상세 페이지(product.html)
 
-  - 상품 미리보기 슬라이더()
-    - 슬라이더
-      – touch로 다음 슬라이드 이동하도록 변경
-    - 웹접근성 기능 추가
-      – aria 속성 추가
-      – 현재 슬라이드, 이전/이후 슬라이드 알림, 스크린 리더에서 읽힐 수 있도록 처리
-    - 상품 (확대) 돋보기 기능
-      - 2번째 이후 슬라이드에서도 작동 할 수 있도록 처리
-        - 슬라이드가 변경될 때마다, 돋보기의 속성값이 초기화 되도록 버그 수정
-  - 유튜브 영상
-    - 배포 페이지에서는 유튜브 영상 자동실행되는 이슈
-      - 웹접근성 관점에서 영상은 자동재생 되지 않도록 변경
-        - autoplay:false; 했음에도 자동 실행됨
-  - 자바스크립트로 생성한 DOM에서 올바른 이미지 링크를 가져오지 못함
-    - itemTemplate.js
-      - 로컬에서는 이미지 링크가 작동하지만, 배포 사이트에서는 이미지가 꺠져서 출력됨
+- 상품 미리보기 슬라이더()
+  - 슬라이더
+    – touch로 다음 슬라이드 이동하도록 변경
+  - 웹접근성 기능 추가
+    – aria 속성 추가
+    – 현재 슬라이드, 이전/이후 슬라이드 알림, 스크린 리더에서 읽힐 수 있도록 처리
+  - 상품 (확대) 돋보기 기능
+    - 2번째 이후 슬라이드에서도 작동 할 수 있도록 처리
+      - 슬라이드가 변경될 때마다, 돋보기의 속성값이 초기화 되도록 버그 수정
+- 유튜브 영상
+  - 배포 페이지에서는 유튜브 영상 자동실행되는 이슈
+    - 웹접근성 관점에서 영상은 자동재생 되지 않도록 변경
+      - autoplay:false; 했음에도 자동 실행됨
+- 자바스크립트로 생성한 DOM에서 올바른 이미지 링크를 가져오지 못함
+
+  - itemTemplate.js
+    - 로컬에서는 이미지 링크가 작동하지만, 배포 사이트에서는 이미지가 꺠져서 출력됨
 
 - 카트 페이지(cart.html)
-  - 모바일 반응형 추가
-  - 헤더에 있는 모든 카트 아이콘 클릭 시, 카트 페이지로 이동하도록 기능 일원화
-    - 상품 페이지(products.html) 경우, 카트 아이콘 클릭 시, 하단 모달이 생성됨
-      - 초기 프로젝트 계획에서는 카트 페이지를 만들 계획이 없었음
-  - 헤더에 있는 카트 아이콘의 숫자를, 모든 페이지에서 동일하게 일치하도록 전체 기능 수정
-    - 카트 아이콘의 숫자는 상품 페이지(products.html)에서만 작동하도록 초기 계획하였음
+- 모바일 반응형 추가
+- 헤더에 있는 모든 카트 아이콘 클릭 시, 카트 페이지로 이동하도록 기능 일원화
+  - 상품 페이지(products.html) 경우, 카트 아이콘 클릭 시, 하단 모달이 생성됨
+    - 초기 프로젝트 계획에서는 카트 페이지를 만들 계획이 없었음
+- 헤더에 있는 카트 아이콘의 숫자를, 모든 페이지에서 동일하게 일치하도록 전체 기능 수정
+  - 카트 아이콘의 숫자는 상품 페이지(products.html)에서만 작동하도록 초기 계획하였음
+
+```
+
+```
