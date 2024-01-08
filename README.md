@@ -1,18 +1,34 @@
-## 프로젝트 미리보기
+## 1. 프로젝트 미리보기
 
-### desktop 버전
+#### desktop 버전
 
 [![포트폴리오 데스크탑 버전 미리보기](https://img.youtube.com/vi/6onRTOI-L7o/0.jpg)](https://www.youtube.com/watch?v=6onRTOI-L7o)
 
-### mobile 버전
+#### mobile 버전
 
 [![포트폴리오 모바일 버전 미리보기](https://img.youtube.com/vi/z4l7uYjj4Vs/0.jpg)](https://www.youtube.com/watch?v=z4l7uYjj4Vs)
 
-## 프로젝트 개요
+## 목차
+
+1. 프로젝트 개요
+2. 포트폴리오의 목적 및 의의
+3. 배운점
+4. 경험한 에러 및 해결
+5. 웹접근성
+6. 반응형
+7. 페이지 미리보기
+8. 프로젝트 컴포넌트(기능,script) 소개
+9. 아쉬운점
+10. 애로사항이 많았던 작업
+11. 버그 & 보완사항 & 향후계획
+
+---
+
+## 1. 프로젝트 개요
 
 - 포트폴리오명: vite-vanila
-- 웹 주소 : [vite-vanila 웹 사이트 주소](https://searchme86.github.io/vite-vanila/index.html, vite-vanila 웹 사이트 주소 )
-- 작업 기간: 2개월
+- 웹 주소 : [https://searchme86.github.io/vite-vanila/index.html](https://searchme86.github.io/vite-vanila/index.html)
+- 작업 기간: 2개월 (10/30,2023 ~ 12/31,2023)
 - 작업 기여도 : 100%(본인)
 - 언어: HTML, SCSS, VanilaJs
 - 사용한 라이브러리 : Swiper
@@ -20,125 +36,224 @@
 - 웹접근성 속성 추가
   – 숨김 텍스트(클래스 .offscreen)
   – skipNavigation
-  – aria-xxx
+  – aria-xxxx
   – tabindex
 - 반응형 : 모바일/데스크탑 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 /1170)
 
-## 포트폴리오의 목적 및 의의
+## 2. 포트폴리오의 목적 및 의의
 
-- React를 익히기 전에 자바스크립트(vanilaJS)를 경험하고, 자바스크립트의 특징(동적타입, 이벤트 기반, DOM핸들링)을 이해
-- 무지성으로 React를 사용하지 않고, 왜 React가 필요한지 장점을 이해
+- 자바스크립트(vanilaJS)를 경험하고, 자바스크립트의 특징(동적타입, 이벤트 기반, DOM핸들링)을 이해
+- 무지성으로 React를 사용하지 않고, 왜 React가 필요한지 장점을 이해하려고 함
 - 반응형 특징이 적용된 페이지 구현
 - 프로젝트 기획 부터 배포까지, 작업의 전체 사이클을 경험
 
-## 배운점
+## 3. 배운점
 
-### [기획] 선 프로젝트 기획 및 기능 정의의 필요성
+#### 3-1. [기획] 선 프로젝트 기획 및 기능 정의 후, 작업진행
 
-- 핵심기능이 구현되고, 이후 새로운 기능을 계속 추가하는 방식으로 작업하여, 폴더관리, 코드 모듈별 관리가 매번 변경하였음
-- 반응형 관련 코드가 혼재가 되어 있어, 이전 코드를 overwrite 해야하는 상황 발생하였음
+- 새로운 기능을 계속 추가하는 방식으로 작업하여 작업에 애로사항 경험
+  - 폴더명이 중복되거나 폴더 depth 관리
+  - 이미 작성된 JS코드들과 충돌문제로 공통된 모듈로 만들기 어렵고, 중복된 코드 작성함
 
-### [자바스크립트] 컴포넌트 단위 개발의 장점(재활용)을 경험
+#### 3-2. [자바스크립트] 컴포넌트 단위 개발의 장점(재활용)을 경험
 
 - HTML을 단위별로 가져다 사용할 수 없어, 헤더(header)와 푸터(footer)를 모든 페이지에 작성함
 - HTML에 변경사항이 있을 경우, 수정내역을 모든 페이지에서 검색하여 찾기 때문에, 휴먼에러가 자주 발생
 
-### [자바스크립트] 자바스크립트는 동적타입이기 때문에, 컴파일 되기 전에는 해당 타입이 어떤 타입으로 사용될지 알 수 없다.
+#### 3-3. [자바스크립트] 자바스크립트는 동적타입이기 때문에, 컴파일 되기 전에는 해당 타입이 어떤 타입으로 사용될지 알 수 없다.
 
 - 상품 삭제 및 상품 보기 할 경우, 상품의 id를 사용해야함
 - id는 코드에서 number 타입을 요구하지만, 함수가 값을 인식할때는 string 타입으로 인식하여 모든 코드를 number 타입으로 변경하여 사용함
 - 해당 관련 코드를 작성함
 
-### [자바스크립트] 자바스크립트는 이벤트(Event)에 기반한 언어이다, 이벤트는 HTML의 구조 안에서 값을 캡쳐((capture)하여 사용한다.
+#### 3-4. [자바스크립트] 자바스크립트는 이벤트(Event)에 기반한 언어이다, 이벤트는 HTML의 구조 안에서 값을 캡쳐((capture)하여 사용한다.
 
 - 카트 상품 미리보기 모달 & 상품 카드 (src/utils/itemTemplate.js)
 - 상품 갯수를 증가/감소/삭제 하기 위해, 클릭 이벤트가 발생하고, 이벤트가 각 카드 상품의 data-id 값을 캡쳐하여, 아이템을 구별하여 작동할 수 있음
 
-### [자바스크립트] 돔(DOM)을 직접 조작해 사용하는 것은, 코드 가독성 이슈와, 값이 null/undefined인 가능성을 내포함
+#### 3-5. [자바스크립트] 돔(DOM)을 직접 조작해 사용하는 것은, 코드 가독성 이슈와, 값이 null/undefined인 가능성을 내포함
 
-### [자바스크립트 / 퍼블리싱] 돔(DOM)요소의 사이즈를 구할 때는,엘리먼트에 Margin(마진)이 아닌, Padding(패딩)을 사용해야, 해당 돔의 정확한 사이즈를 구할 수 있음
+#### 3-6. [자바스크립트 / 퍼블리싱] 돔(DOM)요소의 사이즈를 구할 때는,엘리먼트에 Margin(마진)이 아닌, Padding(패딩)을 사용해야, 해당 돔의 정확한 사이즈를 구할 수 있음
 
-#### blog(scrollTopBlog.js)
+#### 3-7. [자바스크립트] 돔 요소 사이즈(scrollTopBlog.js)
 
 - 특정 위치에서 마우스 스크롤에 따른 애니메이션을 구현하는 중, 개발자 도구에서 희망하는 엘리먼트의 높이가 나오지 않음
 - Margin(마진) 공백으로 된 엘리먼트를 처리할 경우, 브라우저 개발자 도구에서 해당 마진만큼 제외하고 요소의 값이 인식됨
 - Margin(마진) 공백을 Padding(패딩)으로 변경하여 해결함
 - CSS의 박스모델(BOX MODEL)에서 패딩은 나의 요소의 것, 마진은 그 외부의 영역인 것으로 이해함
 
-### [퍼블리싱] 이미지 사이즈는 모두 동일한 이후에, 사용해야한다
+#### 3-8. [퍼블리싱] 이미지 사이즈는 모두 동일한 이후에, 사용해야한다
 
 - product(상품 미리보기 슬라이더)
 - dummy 이미지([PRODUCTS - Dummy REST API of JSON data for development](https://dummyjson.com/docs/products))로 슬라이더를 구현하여, 각 이미지들의 height가 다양함, 비율에 맞게 통일성 있게 이미지 관리가 어려웠다.
 - 이미지는 가로/세로 비율에 맞게 사용해야하는데, height를 강제 변경할 경우, 찌그러지는 경우가 발생함
 
-## 경험한 에러 및 해결
+## 4. 경험한 에러 및 해결
 
-### youtube, yt is undefined
+#### 4-1. youtube, yt is undefined
 
 - YT.Player is not a constructor
 - [Youtube iFrame API - YT.Player is not a constructor](https://dev.to/dance2die/youtube-iframe-api-yt-player-is-not-a-constructor-pa6)
 
-### 상품 삭제 후, 해당 아이템을 갖는 swiper slide와 sync 이슈
+#### 4-2. 상품 삭제 후, 해당 아이템을 갖는 swiper slide와 sync 이슈
 
 - 상품 삭제(.remove()) 후, swiper slide를 update하지 않아서 빈 화면이 출력됐음
 - 예시 이미지 (에러*products*상품변경\_swiper와sync이슈.png)
 - 예시 코드(vscode 추가)
 
-## 웹접근성
+## 5. 웹접근성
 
-### skipNavigation
+#### 5-1. skipNavigation
 
 - mobile
+  - [![skipNavigation_mobile](https://i.vimeocdn.com/video/900782280.jpg)](https://vimeo.com/900782280)
 - desktop
 
-### 모바일 아코디언 메뉴
+  - [![skipNavigation_desktop](https://vimeo.com/900781681)](https://vimeo.com/900781681)
 
-- aria-selected=true/false
-- arai-expanded=true/false
+#### 5-2. 모바일 아코디언 메뉴
 
-### 상품 메뉴
+- [![웹접근성_모바일 아코디언 메뉴](https://img.youtube.com/vi/JJCFjy7hTnk/0.jpg)](https://www.youtube.com/watch?v=JJCFjy7hTnk)
+  - aria-selected=true/false
+  - arai-expanded=true/false
 
-- aria-pressed=true/false
-- tabindex="-1/0"
+#### 5-3. 상품 메뉴
 
-### Swiper
+- [![웹접근성_상품 메뉴](https://img.youtube.com/vi/S7nsH0v6uBk/0.jpg)](https://www.youtube.com/watch?v=S7nsH0v6uBk)
+  - aria-pressed=true/false
+  - tabindex="-1/0"
 
-- aria-roledescription
-- aria-label
-- role
-- aria-hidden=true/false
-- tabindex=-1/0
-- swiper 코드
+#### 5-4. Swiper
 
-### 모달
+- [![웹접근성_Swiper](https://vimeo.com/900780322)](https://vimeo.com/900780322)
 
-- role=“dialog”
-- aria-modal=“true/false”
-- tabindex=“-1/0”
-- arai-labelledby=“”
+  - aria-roledescription
+  - aria-label
+  - role=""
+  - aria-hidden=true/false
+  - tabindex=-1/0
+  - swiper 코드
 
-### 탭
+    ```javascript
+    imageSwiper = new Swiper(".swiper", {
+      on: {
+        slideChange: (swiper) => {
+          const setA11yAttributes = (slide, isVisible) => {
+            const ariaHiddenValue = isVisible ? "false" : "true";
+            const tabIndexValue = isVisible ? "0" : "-1";
 
-- role=“tablist”
-- role=“tab”
-- role=“tabpanel”
-- aria-selected=“true/false”
-- tabindex=“-1/0”
-- aria-controls="tabpanel1"
-- aria-hidden=“true/false”
+            slide.setAttribute("aria-hidden", ariaHiddenValue);
+            slide.setAttribute("tabindex", tabIndexValue);
+          };
 
-## 반응형
+          const updateA11yAttributes = (swiper) => {
+            const {slides, realIndex} = swiper;
 
-### 다음의 종단점(breakpoints)으로 반응형 구현함
+            slides.forEach((slide, index) => {
+              const isVisible = index === realIndex;
+              setA11yAttributes(slide, isVisible);
+            });
+          };
 
-- 360 / 760 /861 /1170
-- 카트(cart.html) 페이지는 모바일 반응형 적용하지 못함
+          updateA11yAttributes(swiper);
+        },
+      },
 
-## 페이지 미리보기
+      a11y: {
+        enabled: true,
+        containerMessage: "카트 등록상품 미리보기 슬라이더",
+        containerRoleDescriptionMessage: "carousel",
+        slideRole: "group",
 
-## 프로젝트 컴포넌트(기능,script) 소개
+        prevSlideMessage: "이전 슬라이드",
+        nextSlideMessage: "다음 슬라이드",
+        slideLabelMessage:
+          "현재 {{index}}번째 슬라이드 / 총 {{slidesLength}}개의 슬라이드",
+        firstSlideMessage: "첫번째 슬라이드 입니다",
+        lastSlideMessage: "마지막 슬라이드 입니다.",
+      },
 
-### 홈(index.html / home.js)
+      allowTouchMove: true,
+      keyboard: {
+        enabled: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      slidesPerView: 3,
+      spaceBetween: 15,
+
+      breakpoints: {
+        360: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        760: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        861: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+      },
+    });
+    ```
+
+#### 5-5. 모달(Modal)
+
+- [![웹접근성_모달](https://img.youtube.com/vi/PMXcgVUNjDg/0.jpg)](https://www.youtube.com/watch?v=PMXcgVUNjDg)
+  - role=“dialog”
+  - aria-modal=“true/false”
+  - tabindex=“-1/0”
+  - arai-labelledby=“”
+
+#### 5-6. 탭(Tab)
+
+- [![웹접근성_탭(Tab)](https://img.youtube.com/vi/aAngDnSvlU8/0.jpg)](https://www.youtube.com/watch?v=aAngDnSvlU8)
+  - role=“tablist”
+  - role=“tab”
+  - role=“tabpanel”
+  - aria-selected=“true/false”
+  - tabindex=“-1/0”
+  - aria-controls="tabpanel1"
+  - aria-hidden=“true/false”
+
+## 6. 반응형
+
+- [![반응형 과정](https://img.youtube.com/vi/Gfj7H5YWOaQ/0.jpg)](https://www.youtube.com/watch?v=Gfj7H5YWOaQ)
+  - 종단점
+    - 360 / 760 / 861 / 1170
+    - 카트(cart.html) 페이지는 모바일 반응형 적용하지 못함
+
+## 7. 페이지 미리보기
+
+#### 7-1. 블로그 페이지(blog.html)
+
+- mobile
+  - [![blog_mobile](https://img.youtube.com/vi/Lgb7zKQjCcc/0.jpg)](https://youtube.com/shorts/Lgb7zKQjCcc)
+- desktop
+  - [![blog_desktop](https://img.youtube.com/vi/rRgyb1avNYQ/0.jpg)](https://www.youtube.com/watch?v=rRgyb1avNYQ)
+
+#### 7-2. 상품 상세 페이지(product.html)
+
+- mobile
+  - [![product_mobile](https://img.youtube.com/vi/Fn6ADSWOyH0/0.jpg)](https://youtube.com/shorts/Fn6ADSWOyH0)
+- desktop
+  - [![product_desktop](https://img.youtube.com/vi/ZmAUiGrP-mw/0.jpg)](https://youtu.be/ZmAUiGrP-mw)
+
+#### 7-3. 상품 페이지(products.html)
+
+- mobile
+  - [![products_mobile](https://img.youtube.com/vi/L2knciHepas/0.jpg)](https://youtu.be/L2knciHepas)
+
+## 8. 프로젝트 컴포넌트(기능,script) 소개
+
+#### 8-1. 홈(index.html / home.js)
 
 - 햄버거 메뉴(모바일 , homeSideBar.js , homeAccordion.js)
 - 모바일 사이즈에서 해당 아이콘을 클릭 시, 좌측에서 메뉴가 생성되고, 메뉴는 아코디언 형식으로 작동된다.
@@ -146,7 +261,7 @@
 - 헤더 우측에 위치한, 돋보기 아이콘을 클릭 시, 우측에서부터 입력가능한 인풋창이 생성
 - 슬라이더(MainSlider.js)
 
-### 블로그(blog.html / blog.js)- 마우스 스크롤 애니메이션
+#### 8-2. 블로그(blog.html / blog.js)- 마우스 스크롤 애니메이션
 
 - 페이지 상단에, 스크롤을 얼마나 했는지를 보여주는 인디케이터(scrollIndicator.js)
 - (데스크탑/모바일) 페이지 상단에 위치
@@ -156,20 +271,20 @@
 - 페이지 스크롤 다운 할 경우, 페이지 제목의 엘리먼트가 생성되고 사라짐(scrollTopBlock.js)
 - (데스크탑/모바일) 페이지 상단에 위치
 
-### 상품(products.html / products.js)
+#### 8-3. 상품(products.html / products.js)
 
-#### 카트
+- 카트
 
-- updateCart.js
-  - 상품등록
-  - 상품수량 변경(swiper 기능과 연결됨)
-- toggleCart.js
-  - 상품 미리보기 모달 생성/삭제(swiper 기능과 연결됨)
-- renderCart.js
+  - updateCart.js
+    - 상품등록
+    - 상품수량 변경(swiper 기능과 연결됨)
+  - toggleCart.js
+    - 상품 미리보기 모달 생성/삭제(swiper 기능과 연결됨)
+  - renderCart.js
 
-  - 카트 아이콘에 로컬 스토리지에 저장된 아이템 수를 보여줌
-  - 카트 아이템의 숫자를 계산하고 변경
-  - 카트 아이템을 상품 미리보기 모달에 추가(swiper 기능과 연결됨)
+    - 카트 아이콘에 로컬 스토리지에 저장된 아이템 수를 보여줌
+    - 카트 아이템의 숫자를 계산하고 변경
+    - 카트 아이템을 상품 미리보기 모달에 추가(swiper 기능과 연결됨)
 
 - swiper.js
 
@@ -191,7 +306,7 @@
 - render.js
   - fetch로 가져온 상품 데이터를 상품 레이아웃에 넣어주는 기능
 
-### 상품상세(product.html / product.js)
+#### 8-4. 상품상세(product.html / product.js)
 
 - youTube.js
 
@@ -209,13 +324,13 @@
 - productTab.js
   - 탭(Tab)
 
-### 그외(유틸)
+#### 8-5 그외(유틸)
 
 - itemTemplate.js
 
   - fetch로 가져온 데이터를 js로 받아, html로 렌더링해주는 재활용 가능한 템플릿 모음
 
-## 아쉬운점
+## 9. 아쉬운점
 
 - 의미단위의 깃(git) 커밋과 및 이슈 관리를 체계적으로 못함
 - 반응형(@media) 코드를 분산하여 작성하여, 이후 코드가 서로 꼬이는 상황이 발생함
@@ -240,7 +355,7 @@
       - 상품 삭제 코드와 swiper slide의 변경사항을 적용 sync하는 코드를 중복하여 작성
         – 예시 코드 작성함, 여기에
 
-## 애로사항이 많았던 작업
+## 10. 애로사항이 많았던 작업
 
 - prodcuts.html
 
@@ -257,7 +372,7 @@
 - blog.html
   - 스크롤 값을 구하기 위한, 엘리먼트 요소 값을 구하기
 
-## 버그 & 보완사항 & 향후계획
+## 11. 버그 & 보완사항 & 향후계획
 
 전체
 
