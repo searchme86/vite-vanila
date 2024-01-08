@@ -1,10 +1,10 @@
 ## 프로젝트 미리보기
 
-#### desktop 버전
+#### 데스크톱
 
 [![포트폴리오 데스크탑 버전 미리보기](https://img.youtube.com/vi/6onRTOI-L7o/0.jpg)](https://www.youtube.com/watch?v=6onRTOI-L7o)
 
-#### mobile 버전
+#### 모바일
 
 [![포트폴리오 모바일 버전 미리보기](https://img.youtube.com/vi/z4l7uYjj4Vs/0.jpg)](https://www.youtube.com/watch?v=z4l7uYjj4Vs)
 
@@ -29,10 +29,10 @@
 - 포트폴리오명: vite-vanila
 - 포트폴리오 컨셉
 
-  - vanilaJs를 통해 DOM을 조작하고 생성
-  - fetch()통해 dummy data를 view로 렌더링
-  - @media을 통해 다양한 뷰포트의 반응형 화면 구현
-  - 컴포넌트 구현(슬라이더, 아코디언, 스크롤 애니메이션)
+  - vanilaJs를 통해 DOM을 조작하고 생성함
+  - fetch()통해 얻은 dummy data로 view를 렌더링함
+  - @media을 통해 다양한 뷰포트의 화면을 구현함
+  - 컴포넌트 구현(슬라이더(Slider), 아코디언(Accordion), 탭(Tab) 스크롤 애니메이션)
   - localStorage를 통해 데이터 전역으로 관리
 
 - 웹 링크 : [https://searchme86.github.io/vite-vanila/index.html](https://searchme86.github.io/vite-vanila/index.html)
@@ -40,13 +40,84 @@
 - 작업 기여도 : 100%
 - 언어: HTML, SCSS, VanilaJs
 - 사용 라이브러리 : [Swiper](https://swiperjs.com/)
-- 번들러/배포 : Vite / github pages
+- 번들러/배포 : [Vite](https://vitejs.dev/) / github pages
 - 웹접근성 속성 추가
+
   - 숨김 텍스트(클래스 .offscreen)
+
+    ```css
+    .offscreen {
+      display: inline-block;
+      position: absolute;
+      overflow: hidden;
+      border: 0;
+      width: 1px;
+      height: 1px;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(50%);
+    }
+    ```
+
   - skipNavigation
-  - aria 속성(aria-xxxx)
-  - tabindex
-- 반응형 : 모바일/데스크탑 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 / 1170)
+
+```html
+<!-- skip navigation -->
+<div id="skip-navigation">
+  <ul>
+    <li><a href="#main">본문 바로가기</a></li>
+    <li><a href="#section__a">Neque porro quisquam est qui dolorem</a></li>
+    <li><a href="#section__b">What is Lorem Ipsum?</a></li>
+    <li><a href="#section__c">Where does it come from?</a></li>
+    <li><a href="#section__d">Why do we use it?</a></li>
+    <li><a href="#section__e">Where can I get some?</a></li>
+    <li><a href="#blog-slide">이미지 슬라이드</a></li>
+    <li><a href="#footer">푸터</a></li>
+  </ul>
+</div>
+```
+
+```css
+#skip-navigation {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  ul {
+    li {
+      a {
+        display: block;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        text-indent: -9999px;
+        text-align: center;
+        padding: 10px 0;
+
+        &:focus,
+        &:active {
+          display: block;
+          width: 100%;
+          color: #fff;
+          text-align: center;
+          text-indent: 0px;
+          padding: 10px 0;
+          line-height: 1;
+          white-space: nowrap;
+          font-size: 14px;
+          font-weight: bold;
+          background: #3c404b;
+          z-index: 1000;
+        }
+      }
+    }
+  }
+}
+```
+
+- aria 속성(aria-xxxx)
+- tabindex
+
+- 반응형 : 데스크톱/모바일 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 / 1170)
   - 카트(cart.html) 페이지는 반응형 적용하지 못함
 
 ## 2. 포트폴리오의 목적 및 의의
@@ -245,6 +316,8 @@
     },
   });
   ```
+
+````
 
 > on, slideChange는 swiper가 기본 제공하는 함수이며, 해당 함수가 받는 인자 "swiper"는 현재 swiper가 갖는 모든 정보를 포함하고 있습니다.
 
@@ -536,3 +609,4 @@ const hideCartOverlay = () => {
     - 초기 프로젝트 계획에서는 카트 페이지를 만들 계획이 없었음
 - 헤더에 있는 카트 아이콘의 숫자를, 모든 페이지에서 동일하게 일치하도록 전체 기능 수정
   - 카트 아이콘의 숫자는 상품 페이지(products.html)에서만 작동하도록 초기 계획하였음
+````
