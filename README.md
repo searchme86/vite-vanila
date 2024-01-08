@@ -58,7 +58,7 @@
     }
     ```
 
-  - skipNavigation
+- skipNavigation
 
 ```html
 <!-- skip navigation -->
@@ -173,30 +173,30 @@
 #### 4-1. youtube, yt is undefined
 
 - YT.Player is not a constructor
-- [Youtube iFrame API - YT.Player is not a constructor](https://dev.to/dance2die/youtube-iframe-api-yt-player-is-not-a-constructor-pa6)
+  - [Youtube iFrame API - YT.Player is not a constructor](https://dev.to/dance2die/youtube-iframe-api-yt-player-is-not-a-constructor-pa6)
 
 #### 4-2. 상품 삭제 후, 해당 아이템을 갖는 swiper slide와 sync 이슈
 
 - 상품 삭제(.remove()) 후, swiper slide를 update하지 않아서 빈 화면이 출력됐음
 
-  - <img width="361" alt="에러_products_상품변경_swiper와sync이슈" src="https://github.com/searchme86/vite-vanila/assets/47154709/6ba13970-0a15-424a-9a4e-bb0fb9c2f0a6">
+  <img width="361" alt="에러_products_상품변경_swiper와sync이슈" src="https://github.com/searchme86/vite-vanila/assets/47154709/6ba13970-0a15-424a-9a4e-bb0fb9c2f0a6">
   - 상품을 삭제(.remove())한 이후, swiper slide를 update 하지 않아 발생한 이슈
 
-    - remove 후에 swiper를 update 해야함
+  - remove 후에 swiper를 update 해야함
 
-      ```javascript
-      targetParent.parentElement.remove();
-      if (slider) {
-        slider.updateSlides();
-        slider.update();
-      }
+    ```javascript
+    targetParent.parentElement.remove();
+    if (slider) {
+      slider.updateSlides();
+      slider.update();
+    }
 
-      cartContents.remove();
-      if (slider) {
-        slider.updateSlides();
-        slider.update();
-      }
-      ```
+    cartContents.remove();
+    if (slider) {
+      slider.updateSlides();
+      slider.update();
+    }
+    ```
 
   - 상품 추가(add)후, 매번 swiper를 초기화 및 업데이트 하지 않아 모달을 재시작하여 변경사항을 적용해야함
 
@@ -226,14 +226,14 @@
 
 [![웹접근성_모바일 아코디언 메뉴](https://img.youtube.com/vi/JJCFjy7hTnk/0.jpg)](https://www.youtube.com/watch?v=JJCFjy7hTnk)
 
-- aria-selected=true/false
-- arai-expanded=true/false
+- aria-selected="true/false"
+- arai-expanded="true/false"
 
 #### 5-3. 상품 메뉴
 
 [![웹접근성_상품 메뉴](https://img.youtube.com/vi/S7nsH0v6uBk/0.jpg)](https://www.youtube.com/watch?v=S7nsH0v6uBk)
 
-- aria-pressed=true/false
+- aria-pressed="true/false"
 - tabindex="-1/0"
 
 #### 5-4. Swiper
@@ -243,8 +243,8 @@
 - aria-roledescription
 - aria-label
 - role=""
-- aria-hidden=true/false
-- tabindex=-1/0
+- aria-hidden="true/false"
+- tabindex="-1/0"
 - swiper 코드
 
   ```javascript
@@ -316,8 +316,6 @@
     },
   });
   ```
-
-````
 
 > on, slideChange는 swiper가 기본 제공하는 함수이며, 해당 함수가 받는 인자 "swiper"는 현재 swiper가 갖는 모든 정보를 포함하고 있습니다.
 
@@ -609,4 +607,7 @@ const hideCartOverlay = () => {
     - 초기 프로젝트 계획에서는 카트 페이지를 만들 계획이 없었음
 - 헤더에 있는 카트 아이콘의 숫자를, 모든 페이지에서 동일하게 일치하도록 전체 기능 수정
   - 카트 아이콘의 숫자는 상품 페이지(products.html)에서만 작동하도록 초기 계획하였음
-````
+
+```
+
+```
