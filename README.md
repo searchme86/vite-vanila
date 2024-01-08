@@ -215,6 +215,9 @@
 
 ## 5. 웹접근성
 
+- 다음의 웹접근성 속성들이 프로젝트에 포함되어 있습니다.
+  - 프리뷰 이미지를 클릭 시, 관련 코드를 확인 가능합니다.
+
 #### 5-1. skipNavigation
 
 - mobile
@@ -234,12 +237,16 @@
 
 [![웹접근성_상품 메뉴](https://img.youtube.com/vi/S7nsH0v6uBk/0.jpg)](https://www.youtube.com/watch?v=S7nsH0v6uBk)
 
+<img width="1314" alt="aria_상품메뉴" src="https://github.com/searchme86/vite-vanila/assets/47154709/93ba9c5c-4d15-46b6-abd8-2f0746b6bce4">
+
 - aria-pressed="true/false"
 - tabindex="-1/0"
 
 #### 5-4. Swiper
 
 [![웹접근성_Swiper](https://vimeo.com/900780322)](https://vimeo.com/900780322)
+
+<img width="1239" alt="aria_swiper" src="https://github.com/searchme86/vite-vanila/assets/47154709/efce0335-31b8-4990-be85-baa5fc2e69ff">
 
 - aria-roledescription
 - aria-label
@@ -324,6 +331,8 @@
 
 [![웹접근성_모달](https://img.youtube.com/vi/PMXcgVUNjDg/0.jpg)](https://www.youtube.com/watch?v=PMXcgVUNjDg)
 
+<img width="1242" alt="aria_modal" src="https://github.com/searchme86/vite-vanila/assets/47154709/410db577-8bd4-4d8a-b38e-bdd0e5157f56">
+
 - role=“dialog”
 - aria-modal=“true/false”
 - tabindex=“-1/0”
@@ -355,6 +364,8 @@ const hideCartOverlay = () => {
 #### 5-6. 탭(Tab)
 
 [![웹접근성_탭(Tab)](https://img.youtube.com/vi/aAngDnSvlU8/0.jpg)](https://www.youtube.com/watch?v=aAngDnSvlU8)
+
+<img width="1415" alt="aria_탭" src="https://github.com/searchme86/vite-vanila/assets/47154709/bd109e50-3e05-4841-bddf-ed259644aa68">
 
 - role=“tablist”
 - role=“tab”
@@ -400,6 +411,11 @@ const hideCartOverlay = () => {
 
 - mobile
   [![product_mobile](https://img.youtube.com/vi/Fn6ADSWOyH0/0.jpg)](https://youtube.com/shorts/Fn6ADSWOyH0)
+
+<img width="165" alt="스크린샷_모바일_카트상품" src="https://github.com/searchme86/vite-vanila/assets/47154709/f4b2114e-fee5-4828-9db5-576d58e1ecb1">
+
+<img width="361" alt="스크린샷_카트" src="https://github.com/searchme86/vite-vanila/assets/47154709/58da3512-8713-4adc-ab26-67a47c271da8">
+
 - desktop
   [![product_desktop](https://img.youtube.com/vi/ZmAUiGrP-mw/0.jpg)](https://youtu.be/ZmAUiGrP-mw)
 
