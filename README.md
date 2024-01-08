@@ -180,7 +180,8 @@
 - 상품 삭제(.remove()) 후, swiper slide를 update하지 않아서 빈 화면이 출력됐음
 
   <img width="361" alt="에러_products_상품변경_swiper와sync이슈" src="https://github.com/searchme86/vite-vanila/assets/47154709/6ba13970-0a15-424a-9a4e-bb0fb9c2f0a6">
-  - 상품을 삭제(.remove())한 이후, swiper slide를 update 하지 않아 발생한 이슈
+
+- 상품을 삭제(.remove())한 이후, swiper slide를 update 하지 않아 발생한 이슈
 
   - remove 후에 swiper를 update 해야함
 
@@ -607,7 +608,3 @@ const hideCartOverlay = () => {
     - 초기 프로젝트 계획에서는 카트 페이지를 만들 계획이 없었음
 - 헤더에 있는 카트 아이콘의 숫자를, 모든 페이지에서 동일하게 일치하도록 전체 기능 수정
   - 카트 아이콘의 숫자는 상품 페이지(products.html)에서만 작동하도록 초기 계획하였음
-
-```
-
-```
