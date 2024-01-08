@@ -130,144 +130,151 @@
       }
       ```
 
+  > appendSlide(), updateSlides(), update()는 swiper가 제공하는 Methods & Properties 섹션에서 확인 가능합니다.
+
 ## 5. 웹접근성
 
 #### 5-1. skipNavigation
 
 - mobile
-  - [![skipNavigation_mobile](https://i.vimeocdn.com/video/900782280.jpg)](https://vimeo.com/900782280)
-- desktop
+  [![skipNavigation_mobile](https://i.vimeocdn.com/video/900782280.jpg)](https://vimeo.com/900782280)
 
-  - [![skipNavigation_desktop](https://vimeo.com/900781681)](https://vimeo.com/900781681)
+- desktop
+  [![skipNavigation_desktop](https://vimeo.com/900781681)](https://vimeo.com/900781681)
 
 #### 5-2. 모바일 아코디언 메뉴
 
-- [![웹접근성_모바일 아코디언 메뉴](https://img.youtube.com/vi/JJCFjy7hTnk/0.jpg)](https://www.youtube.com/watch?v=JJCFjy7hTnk)
-  - aria-selected=true/false
-  - arai-expanded=true/false
+[![웹접근성_모바일 아코디언 메뉴](https://img.youtube.com/vi/JJCFjy7hTnk/0.jpg)](https://www.youtube.com/watch?v=JJCFjy7hTnk)
+
+- aria-selected=true/false
+- arai-expanded=true/false
 
 #### 5-3. 상품 메뉴
 
-- [![웹접근성_상품 메뉴](https://img.youtube.com/vi/S7nsH0v6uBk/0.jpg)](https://www.youtube.com/watch?v=S7nsH0v6uBk)
-  - aria-pressed=true/false
-  - tabindex="-1/0"
+[![웹접근성_상품 메뉴](https://img.youtube.com/vi/S7nsH0v6uBk/0.jpg)](https://www.youtube.com/watch?v=S7nsH0v6uBk)
+
+- aria-pressed=true/false
+- tabindex="-1/0"
 
 #### 5-4. Swiper
 
-- [![웹접근성_Swiper](https://vimeo.com/900780322)](https://vimeo.com/900780322)
+[![웹접근성_Swiper](https://vimeo.com/900780322)](https://vimeo.com/900780322)
 
-  - aria-roledescription
-  - aria-label
-  - role=""
-  - aria-hidden=true/false
-  - tabindex=-1/0
-  - swiper 코드
+- aria-roledescription
+- aria-label
+- role=""
+- aria-hidden=true/false
+- tabindex=-1/0
+- swiper 코드
 
-    ```javascript
-    imageSwiper = new Swiper(".swiper", {
-      on: {
-        slideChange: (swiper) => {
-          const setA11yAttributes = (slide, isVisible) => {
-            const ariaHiddenValue = isVisible ? "false" : "true";
-            const tabIndexValue = isVisible ? "0" : "-1";
+  ```javascript
+  imageSwiper = new Swiper(".swiper", {
+    on: {
+      slideChange: (swiper) => {
+        const setA11yAttributes = (slide, isVisible) => {
+          const ariaHiddenValue = isVisible ? "false" : "true";
+          const tabIndexValue = isVisible ? "0" : "-1";
 
-            slide.setAttribute("aria-hidden", ariaHiddenValue);
-            slide.setAttribute("tabindex", tabIndexValue);
-          };
+          slide.setAttribute("aria-hidden", ariaHiddenValue);
+          slide.setAttribute("tabindex", tabIndexValue);
+        };
 
-          const updateA11yAttributes = (swiper) => {
-            const {slides, realIndex} = swiper;
+        const updateA11yAttributes = (swiper) => {
+          const {slides, realIndex} = swiper;
 
-            slides.forEach((slide, index) => {
-              const isVisible = index === realIndex;
-              setA11yAttributes(slide, isVisible);
-            });
-          };
+          slides.forEach((slide, index) => {
+            const isVisible = index === realIndex;
+            setA11yAttributes(slide, isVisible);
+          });
+        };
 
-          updateA11yAttributes(swiper);
-        },
+        updateA11yAttributes(swiper);
       },
+    },
 
-      a11y: {
-        enabled: true,
-        containerMessage: "카트 등록상품 미리보기 슬라이더",
-        containerRoleDescriptionMessage: "carousel",
-        slideRole: "group",
+    a11y: {
+      enabled: true,
+      containerMessage: "카트 등록상품 미리보기 슬라이더",
+      containerRoleDescriptionMessage: "carousel",
+      slideRole: "group",
 
-        prevSlideMessage: "이전 슬라이드",
-        nextSlideMessage: "다음 슬라이드",
-        slideLabelMessage:
-          "현재 {{index}}번째 슬라이드 / 총 {{slidesLength}}개의 슬라이드",
-        firstSlideMessage: "첫번째 슬라이드 입니다",
-        lastSlideMessage: "마지막 슬라이드 입니다.",
-      },
+      prevSlideMessage: "이전 슬라이드",
+      nextSlideMessage: "다음 슬라이드",
+      slideLabelMessage:
+        "현재 {{index}}번째 슬라이드 / 총 {{slidesLength}}개의 슬라이드",
+      firstSlideMessage: "첫번째 슬라이드 입니다",
+      lastSlideMessage: "마지막 슬라이드 입니다.",
+    },
 
-      allowTouchMove: true,
-      keyboard: {
-        enabled: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-      slidesPerView: 3,
-      spaceBetween: 15,
+    allowTouchMove: true,
+    keyboard: {
+      enabled: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    slidesPerView: 3,
+    spaceBetween: 15,
 
-      breakpoints: {
-        360: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        760: {
-          slidesPerView: 3,
-          spaceBetween: 10,
-        },
-        861: {
-          slidesPerView: 3,
-          spaceBetween: 10,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
+    breakpoints: {
+      360: {
+        slidesPerView: 1,
+        spaceBetween: 10,
       },
-    });
-    ```
+      760: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      861: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+    },
+  });
+  ```
+
+> on, slideChange는 swiper가 기본 제공하는 함수이며, 해당 함수가 받는 인자 "swiper"는 현재 swiper가 갖는 모든 정보를 포함하고 있습니다.
 
 #### 5-5. 모달(Modal)
 
-- [![웹접근성_모달](https://img.youtube.com/vi/PMXcgVUNjDg/0.jpg)](https://www.youtube.com/watch?v=PMXcgVUNjDg)
+[![웹접근성_모달](https://img.youtube.com/vi/PMXcgVUNjDg/0.jpg)](https://www.youtube.com/watch?v=PMXcgVUNjDg)
 
-  - role=“dialog”
-  - aria-modal=“true/false”
-  - tabindex=“-1/0”
-  - arai-labelledby=“”
+- role=“dialog”
+- aria-modal=“true/false”
+- tabindex=“-1/0”
+- arai-labelledby=“”
 
-  ```javascript
-  const showCartOverlay = () => {
-    if (modalLayer) {
-      cartOverlay.classList.add("show");
-      cartOverlay.removeAttribute("aria-modal", "false");
-      cartOverlay.removeAttribute("tabindex");
-      cartOverlay.setAttribute("aria-modal", "true");
-      cartOverlay.setAttribute("tabindex", "0");
-    }
-    slider.init(document.querySelector(".swiper"));
-  };
+```javascript
+const showCartOverlay = () => {
+  if (modalLayer) {
+    cartOverlay.classList.add("show");
+    cartOverlay.removeAttribute("aria-modal", "false");
+    cartOverlay.removeAttribute("tabindex");
+    cartOverlay.setAttribute("aria-modal", "true");
+    cartOverlay.setAttribute("tabindex", "0");
+  }
+  slider.init(document.querySelector(".swiper"));
+};
 
-  const hideCartOverlay = () => {
-    if (modalLayer) {
-      cartOverlay.classList.remove("show");
-      cartOverlay.removeAttribute("aria-modal", "true");
-      cartOverlay.removeAttribute("tabindex");
-      cartOverlay.setAttribute("aria-modal", "false");
-      cartOverlay.setAttribute("tabindex", "-1");
-    }
-  };
-  ```
+const hideCartOverlay = () => {
+  if (modalLayer) {
+    cartOverlay.classList.remove("show");
+    cartOverlay.removeAttribute("aria-modal", "true");
+    cartOverlay.removeAttribute("tabindex");
+    cartOverlay.setAttribute("aria-modal", "false");
+    cartOverlay.setAttribute("tabindex", "-1");
+  }
+};
+```
 
 #### 5-6. 탭(Tab)
 
-- [![웹접근성_탭(Tab)](https://img.youtube.com/vi/aAngDnSvlU8/0.jpg)](https://www.youtube.com/watch?v=aAngDnSvlU8)
+[![웹접근성_탭(Tab)](https://img.youtube.com/vi/aAngDnSvlU8/0.jpg)](https://www.youtube.com/watch?v=aAngDnSvlU8)
+
 - role=“tablist”
 - role=“tab”
 - role=“tabpanel”
@@ -278,19 +285,24 @@
 
 ## 6. 반응형
 
-- [![반응형 과정](https://img.youtube.com/vi/Gfj7H5YWOaQ/0.jpg)](https://www.youtube.com/watch?v=Gfj7H5YWOaQ)
+- 뷰포트 변경에 따른 브라우저 화면을 확인 가능합니다.
+  [![반응형 과정](https://img.youtube.com/vi/Gfj7H5YWOaQ/0.jpg)](https://www.youtube.com/watch?v=Gfj7H5YWOaQ)
 
 - 종단점
 
   - 360 / 760 / 861 / 1170
 
-    - <img width="360" alt="반응형_360" src="https://github.com/searchme86/vite-vanila/assets/47154709/999586d2-57b1-452f-8b14-031e27b486f0">
+- 뷰포트 360
+  <img width="360" alt="반응형_360" src="https://github.com/searchme86/vite-vanila/assets/47154709/999586d2-57b1-452f-8b14-031e27b486f0">
 
-    - <img width="570" alt="반응형_760" src="https://github.com/searchme86/vite-vanila/assets/47154709/0bfcc649-c50e-43e0-b981-649b4205d928">
+- 뷰포트 760
+  <img width="570" alt="반응형_760" src="https://github.com/searchme86/vite-vanila/assets/47154709/0bfcc649-c50e-43e0-b981-649b4205d928">
 
-    - <img width="603" alt="반응형_861" src="https://github.com/searchme86/vite-vanila/assets/47154709/53abb23e-52df-4abb-8226-0e46419015e3">
+- 뷰포트 861
+  <img width="603" alt="반응형_861" src="https://github.com/searchme86/vite-vanila/assets/47154709/53abb23e-52df-4abb-8226-0e46419015e3">
 
-    - <img width="1177" alt="반응형_1170" src="https://github.com/searchme86/vite-vanila/assets/47154709/a9ef317a-f3e3-49a9-9e0f-fd68068ce7e1">
+- 뷰포트 1170
+  <img width="1177" alt="반응형_1170" src="https://github.com/searchme86/vite-vanila/assets/47154709/a9ef317a-f3e3-49a9-9e0f-fd68068ce7e1">
 
   - 카트(cart.html) 페이지는 모바일 반응형 적용하지 못함
 
@@ -299,21 +311,21 @@
 #### 7-1. 블로그 페이지(blog.html)
 
 - mobile
-- [![blog_mobile](https://img.youtube.com/vi/Lgb7zKQjCcc/0.jpg)](https://youtube.com/shorts/Lgb7zKQjCcc)
+  [![blog_mobile](https://img.youtube.com/vi/Lgb7zKQjCcc/0.jpg)](https://youtube.com/shorts/Lgb7zKQjCcc)
 - desktop
-- [![blog_desktop](https://img.youtube.com/vi/rRgyb1avNYQ/0.jpg)](https://www.youtube.com/watch?v=rRgyb1avNYQ)
+  [![blog_desktop](https://img.youtube.com/vi/rRgyb1avNYQ/0.jpg)](https://www.youtube.com/watch?v=rRgyb1avNYQ)
 
 #### 7-2. 상품 상세 페이지(product.html)
 
 - mobile
-- [![product_mobile](https://img.youtube.com/vi/Fn6ADSWOyH0/0.jpg)](https://youtube.com/shorts/Fn6ADSWOyH0)
+  [![product_mobile](https://img.youtube.com/vi/Fn6ADSWOyH0/0.jpg)](https://youtube.com/shorts/Fn6ADSWOyH0)
 - desktop
-- [![product_desktop](https://img.youtube.com/vi/ZmAUiGrP-mw/0.jpg)](https://youtu.be/ZmAUiGrP-mw)
+  [![product_desktop](https://img.youtube.com/vi/ZmAUiGrP-mw/0.jpg)](https://youtu.be/ZmAUiGrP-mw)
 
 #### 7-3. 상품 페이지(products.html)
 
 - mobile
-- [![products_mobile](https://img.youtube.com/vi/L2knciHepas/0.jpg)](https://youtu.be/L2knciHepas)
+  [![products_mobile](https://img.youtube.com/vi/L2knciHepas/0.jpg)](https://youtu.be/L2knciHepas)
 
 ## 8. 프로젝트 컴포넌트(기능,script) 소개
 
@@ -339,60 +351,60 @@
 
 - 카트
 
-- updateCart.js
-  - 상품등록
-  - 상품수량 변경(swiper 기능과 연결됨)
-- toggleCart.js
-  - 상품 미리보기 모달 생성/삭제(swiper 기능과 연결됨)
-- renderCart.js
+  - updateCart.js
+    - 상품등록
+    - 상품수량 변경(swiper 기능과 연결됨)
+  - toggleCart.js
+    - 상품 미리보기 모달 생성/삭제(swiper 기능과 연결됨)
+  - renderCart.js
 
-  - 카트 아이콘에 로컬 스토리지에 저장된 아이템 수를 보여줌
-  - 카트 아이템의 숫자를 계산하고 변경
-  - 카트 아이템을 상품 미리보기 모달에 추가(swiper 기능과 연결됨)
+    - 카트 아이콘에 로컬 스토리지에 저장된 아이템 수를 보여줌
+    - 카트 아이템의 숫자를 계산하고 변경
+    - 카트 아이템을 상품 미리보기 모달에 추가(swiper 기능과 연결됨)
 
 - swiper.js
 
-- swiper를 초기화 하고 생성
-- swiper의 속성을 정의
+  - swiper를 초기화 하고 생성
+  - swiper의 속성을 정의
 
 - companies.js
 
-- 등록된 상품에 관련된 제조회사를 filter 해서 메뉴를 생성
+  - 등록된 상품에 관련된 제조회사를 filter 해서 메뉴를 생성
 
 - search.js
 
-- 대소문자 구분없이 상품 검색기능
+  - 대소문자 구분없이 상품 검색기능
 
 - cartElemDom.js
 
-- 페이지(products.html)에 사용되는 DOM을 모두 정의
+  - 페이지(products.html)에 사용되는 DOM을 모두 정의
 
 - render.js
-- fetch로 가져온 상품 데이터를 상품 레이아웃에 넣어주는 기능
+  - fetch로 가져온 상품 데이터를 상품 레이아웃에 넣어주는 기능
 
 #### 8-4. 상품상세(product.html / product.js)
 
 - youTube.js
 
-- 유튜브 실행
+  - 유튜브 실행
 
 - sliderComponent.js / sliderData.js(상품 미리보기 슬라이더)
 
-- 슬라이더 (sliderComponent.js)
-- 슬라이더 아이템 템플릿 및 데이터 (sliderData.js)
+  - 슬라이더 (sliderComponent.js)
+  - 슬라이더 아이템 템플릿 및 데이터 (sliderData.js)
 
 - zoomIn.js
 
-- 상품 확대 돋보기 기능
+  - 상품 확대 돋보기 기능
 
 - productTab.js
-- 탭(Tab)
+  - 탭(Tab)
 
 #### 8-5 그외(유틸)
 
 - itemTemplate.js
 
-- fetch로 가져온 데이터를 js로 받아, html로 렌더링해주는 재활용 가능한 템플릿 모음
+  - fetch로 가져온 데이터를 js로 받아, html로 렌더링해주는 재활용 가능한 템플릿 모음
 
 ## 9. 아쉬운점
 
@@ -423,18 +435,18 @@
 
 - prodcuts.html
 
-- 카트 미리보기 슬라이더
-- 상품 삭제에 따른 Swiper slide 변경 사항 Sync 이슈
-- 상품 갯수 차감 버튼 및 삭제 아이콘 클릭으로 상품 삭제 할 경우, 상품은 삭제 되지만 Swiper slide는 그대로 유지
-- 상품 삭제하는 코드와 Swiper도 변경되도록 코드 추가하여 해결
+  - 카트 미리보기 슬라이더
+  - 상품 삭제에 따른 Swiper slide 변경 사항 Sync 이슈
+  - 상품 갯수 차감 버튼 및 삭제 아이콘 클릭으로 상품 삭제 할 경우, 상품은 삭제 되지만 Swiper slide는 그대로 유지
+  - 상품 삭제하는 코드와 Swiper도 변경되도록 코드 추가하여 해결
 
 - product.html
 
-- script로 렌더링 하는 HTML DOM에서 이미지의 src 링크가 배포 페이지에서 깨지는 이슈
-  – 해결못함
+  - script로 렌더링 하는 HTML DOM에서 이미지의 src 링크가 배포 페이지에서 깨지는 이슈
+    – 해결못함
 
 - blog.html
-- 스크롤 값을 구하기 위한, 엘리먼트 요소 값을 구하기
+  - 스크롤 값을 구하기 위한, 엘리먼트 요소 값을 구하기
 
 ## 11. 버그 & 보완사항 & 향후계획
 
@@ -512,7 +524,3 @@
     - 초기 프로젝트 계획에서는 카트 페이지를 만들 계획이 없었음
 - 헤더에 있는 카트 아이콘의 숫자를, 모든 페이지에서 동일하게 일치하도록 전체 기능 수정
   - 카트 아이콘의 숫자는 상품 페이지(products.html)에서만 작동하도록 초기 계획하였음
-
-```
-
-```
