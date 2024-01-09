@@ -41,6 +41,12 @@
 - 언어: HTML, SCSS, VanilaJs
 - 사용 라이브러리 : [Swiper](https://swiperjs.com/)
 - 번들러/배포 : [Vite](https://vitejs.dev/) / [GitHub Pages](https://pages.github.com/)
+  ```sh
+  git add dist -f
+  git commit -m "adding dist"
+  git subtree push --prefix dist origin gh-pages
+  git rm -f dist
+  ```
 - 웹접근성 속성 추가
 
   - 숨김 텍스트(클래스 .offscreen)
@@ -118,7 +124,23 @@
 - tabindex
 
 - 반응형 : 데스크톱/모바일 뷰 기능 추가(뷰포트 사이즈 : 360 / 760 / 861 / 1170)
+
   - 카트(cart.html) 페이지는 반응형 적용하지 못함
+
+- 설치 NPM
+
+  ```sh
+  npm i vite-plugin-checker --save-dev
+  npm add --save-dev sass
+  npm i vite-plugin-html --save-dev
+  npm i vite-plugin-html-config --save-dev
+  npm i autoprefixer --save-dev
+  npm i postcss --save-dev
+  npm install --save-dev terser
+  npm install —save-dev prettier
+  npm i @rollup/plugin-terser --save-dev
+  npm install cssnano postcss --save-dev
+  ```
 
 ## 2. 포트폴리오의 목적 및 의의
 
