@@ -1,6 +1,6 @@
 ## 프로젝트 미리보기
 
-#### 데스크톱
+#### 데스크탑
 
 [![포트폴리오 데스크탑 버전 미리보기](https://img.youtube.com/vi/6onRTOI-L7o/0.jpg)](https://www.youtube.com/watch?v=6onRTOI-L7o)
 
@@ -365,7 +365,7 @@ const hideCartOverlay = () => {
 
 [![웹접근성_탭(Tab)](https://img.youtube.com/vi/aAngDnSvlU8/0.jpg)](https://www.youtube.com/watch?v=aAngDnSvlU8)
 
-<img width="1415" alt="aria_탭" src="https://github.com/searchme86/vite-vanila/assets/47154709/bd109e50-3e05-4841-bddf-ed259644aa68">
+<img width="1415" alt="aria_탭" src="https://github.com/searchme86/vite-vanila/assets/47154709/8fe17c33-6f53-4dc2-a03f-d6ae055dadb2">
 
 - role=“tablist”
 - role=“tab”
@@ -394,7 +394,7 @@ const hideCartOverlay = () => {
   <img width="603" alt="반응형_861" src="https://github.com/searchme86/vite-vanila/assets/47154709/53abb23e-52df-4abb-8226-0e46419015e3">
 
 - 뷰포트 1170
-  <img width="1177" alt="반응형_1170" src="https://github.com/searchme86/vite-vanila/assets/47154709/a9ef317a-f3e3-49a9-9e0f-fd68068ce7e1">
+  <img width="1177" alt="반응형_1170" src="https://github.com/searchme86/vite-vanila/assets/47154709/44f7d078-4470-40a0-9ded-e40fb60fbd27">
 
   - 카트(cart.html) 페이지는 모바일 반응형 적용하지 못함
 
@@ -565,6 +565,52 @@ const hideCartOverlay = () => {
 - 슬라이더(swiper를 제외한)에 터치(touch)로, 구동되도록 기능 수정
 - 상품 등록 페이지 구현
   - 현재는 dummy 데이터를 fetch해서 보여주는 기능만 존재함
+- "innerHTML"로 DOM을 생성한 코드에 "DOMPurify.sanitize()"기능을 추가
+
+  - innerHTML로 DOM을 생성했음
+
+    ```javascript
+    export const createCartItem = ({id, title, price, thumbnail, amount}) => {
+      const singleCartItem = document.createElement("li");
+      singleCartItem.classList.add("swiper-slide");
+      singleCartItem.setAttribute("data-id", id);
+      singleCartItem.innerHTML = /*html*/ `
+        <div class="box__item-top">
+          <div class="box__cart-image">
+            <div class="box__image">
+              <img src="${thumbnail}" alt="${title} 이미지" />
+            </div>
+          </div>
+          <button type="button" class="button__remove-item" data-id="${id}">
+            <i class="fas fa-trash-alt"></i>
+            <span class="offscreen">상품 삭제</span>
+          </button>
+        </div>
+        <div class="box__cartItem-content">
+          <div class="box__cartItem-info">
+            <strong class="text__cartItem-title">${title}</strong>
+            <span class="text__cartItem-price">$${price}</span>
+          </div>
+          <div class="box__control">
+            <button class="button__increase-cartItem" data-id="${id}">
+              <span class="offscreen">상품 수량증가</span>
+              <i class="fas fa-chevron-up"></i>
+            </button>
+            <span class="text__cartItem-count" data-id="${id}">
+              <span class="offscreen">현재 상품수량</span>${amount}<span class="offscreen">개</span>
+            </span>
+            <button class="button__decrease-cartItem" data-id="${id}">
+              <span class="offscreen">상품 수량감소</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        `;
+      return singleCartItem;
+    };
+    ```
+
+  - XSS(Cross-Site Scripting Attacks)을 사전에 방지함
 
 페이지 별
 
