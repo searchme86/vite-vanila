@@ -40,7 +40,7 @@
 - 작업 기여도 : 100%
 - 언어: HTML, SCSS, VanilaJs
 - 사용 라이브러리 : [Swiper](https://swiperjs.com/)
-- 번들러/배포 : [Vite](https://vitejs.dev/) / github pages
+- 번들러/배포 : [Vite](https://vitejs.dev/) / [GitHub Pages](https://pages.github.com/)
 - 웹접근성 속성 추가
 
   - 숨김 텍스트(클래스 .offscreen)
