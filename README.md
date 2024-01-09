@@ -423,6 +423,8 @@ const hideCartOverlay = () => {
 
 - mobile
   [![products_mobile](https://img.youtube.com/vi/L2knciHepas/0.jpg)](https://youtu.be/L2knciHepas)
+  [![products_mobile](https://img.youtube.com/vi/K2q-eQ5Ty3Q/0.jpg)](https://www.youtube.com/watch?v=K2q-eQ5Ty3Q)
+  [![products_mobile](https://img.youtube.com/vi/mXX3PofLNT4/0.jpg)](https://youtube.com/shorts/mXX3PofLNT4)
 
 ## 8. 프로젝트 컴포넌트(기능,script) 소개
 
